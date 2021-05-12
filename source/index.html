@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Созвездие</title>
+    <link rel="preload" href="fonts/roboto/Roboto-Regular.ttf" as="font" crossorigin>
+    <!-- <link rel="preload" href="fonts/opensanslight.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/opensansbold.woff2" as="font" crossorigin> -->
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body class="page-body">
+
+      <header class="main-header">
+        <div class="main-nav-wrapper">
+        <nav class="main-nav">
+
+            <ul class="main-nav__list site-list">
+            <li class="site-list__item site-list__item-city">
+              <button class="site-list__item-button">
+                Ваш город:
+                <span class="site-list__item-text">Москва</span>
+              </button>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__item-link" href="#">Доставка</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__item-link" href="#">Оплата</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__item-link" href="#">Возврат</a>
+            </li>
+          </ul>
+          <ul class="main-nav__list aboutus-list">
+            <li class="aboutus-list__item aboutus-list__item-we">
+              <button class="aboutus-list__item-button">
+                О нас
+              </button>
+            </li>
+            <li class="aboutus-list__item">
+              <a class="aboutus-list__item-link" href="#">Контакты</a>
+            </li>
+            <li class="aboutus-list__item aboutus-list__item-mail">
+              <a class="aboutus-list__item-contacts" href="mailto:sale@oao-sozvezdie.ru">sale@oao-sozvezdie.ru</a>
+            </li>
+            <li class="aboutus-list__item aboutus-list__item-phone">
+              <a class="aboutus-list__item-contacts" href="tel:+74956171877">8 (495) 617-18-77</a>
+            </li>
+          </ul>
+         </nav>
+        </div>
+        <nav class="user-nav">
+          <ul class="user-nav__list user-list">
+            <li class="user-list__item">
+              <a class="user-list__logo" href="#">
+                <img src="img/logo.svg" width="186" height="50" alt="Логотип «Созвездие»">
+              </a>
+            </li>
+            <li class="user-list__item">
+              <a class="user-list__item-catalog" href="#">Каталог</a>
+            </li>
+            <li class="user-list__item">
+              <form class="user-list__item-fotm" action="" method="POST">
+                <button class="user-list__item-fotm-choice">Везде</button>
+                <input id="search-field" type="search" name="search" placeholder="Поиск по сайту">
+                <label aria-label="search" for="search-field"></label>
+                </form>
+            </li>
+            <li class="user-list__item user-list__item-icon">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="20" viewBox="0 0 17 20">
+                  <image id="Сравнение" width="17" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAAcUlEQVQ4jWPWMnT8LyqpKPj6xYMdDGQCJmyCr+IUCl7FKURQZAgDA0MBAwMDxYaQBKhiCAsOcT0GBoa/hDRrGTpOYGBgyMdqiNiiB59IcQlW72gZOj7QMnTcQJEhpAL6GgLyHsibw8Q7o4YMSUMYGBgAykgU1KlthboAAAAASUVORK5CYII="/>
+                </svg>
+              </a>
+            </li>
+            <li class="user-list__item user-list__item-icon">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="21" viewBox="0 0 25 21">
+                  <image id="Избранное" width="25" height="21" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAYAAACzK0UYAAACsklEQVRIia2VT0hUURTGf86Y0+AkCVlORGiLpGeUj0opC3nhIoVAJF0UQeAmKCiljQW1sIW2i6DaFmRZwuAicveKqCiRF6RvUiilRUguJmwc/5QWZzgTwzQzjtW3ee/d853vu+fec9/NQ2GYlry/BvbxJyJAlevYnxKRm427ahuKo88Lvct5yeyfwIWJ0vBw1F/pOrZ8kp8UP6kG94HxpPE1kgf0GaZV5zr24rUjVYG9gdigGIzGfCOxJc+sEOeWPQvj8wW+4ai/RvXuynh8FoZpFapwFNjpOvb35NkZpnUauAVcdx37fKjJcGqLYlVjc74Xhx6NHUzhyqRGgACw3XXsWY/GOoHNQEeqgcB17NtSCXDuYv2ex2LweTE/UuFfqE/DlfwO1euMV2KYVhkQBp66jt2QZj8SM1wHDJ3aFKlo2TCzNDFfsPtw//vRLPxBoA7YIZX06Lp3ZErQGX4DWiI/vOG30bVnshko2lW3RzY+qHuTqCib0TsXjBXEEyhT3aBU0gxMAg8M06rMUSArVKdPdZsT3bUDeAV8Bapdx/7yDwYbgTfAemC/69jheHfJC9AKbAFChmn5/tJA8kKq06q6eBOE6anJDyXB8mlAzkR5SbA8ND01uRoDWZU7QCNw1nXsvkTMk0x0HVsO3A3gBHBplYUI/7jkq85veNKQpfWeAF2GabXmWIXwujSvPTWelyGpCHgJbJMD5Tr2UBaDajnIwEfggOvYMzmZaHKZdskSUJP8B07ibNU/t1e7Mu0mpluuODShCSgGBgzTCqQYyPeAxpsyGWQ1USNZsja5S4Bew7S8aiDPXh1vU15GZDVRo3vAVeAo0K3D3frdpfGsyF+JoLgsd4NcXrpXx4CHwJVckjNufCoM0/IDz/T2lG6Trpv7ryZqVAr0SyWuY0/llAT8AhrQ8wx1VFl2AAAAAElFTkSuQmCC"/>
+                </svg>
+              </a>
+            </li>
+            <li class="user-list__item user-list__item-icon">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="22" viewBox="0 0 26 22">
+                  <image id="Корзина" width="26" height="22" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAWCAYAAADeiIy1AAABhklEQVRIie2VPUsDQRCGn5ggWAqaxg9SCMJWbmehyBaChfZiEQRFEAV/gNjoH1AQFLHQIGhpa3WCH6AGFwuvDmKVRhER8ZuFPQjJ3eXuktIXrriZ2Xlud2fmUkKqX/ylXO2cBvhiKwNsVC1qBeaBIaBpIF8JqR6FVCfNzJkJsJ8BE0KqtKudbyFVH7DYAOctDDQJSKAIdANLDYD2wkDYeyraokjFzS6kWgFWga2WgJh74MmCEklIZXLPAneudq59Qa52foBLYDgpCBgDeoEd8xK0I+zxZYVU/QlBc6YIgIMoIJLsSkjVA4wDR652XuqBTLW9J7ynGSANbHuGQJCrnQ/gKi7I9J4F3braufHsQeXt6RxYFlJtAl8RWZ2279YqjVFARgsRIZ5egcOYa/7lr7rzq5zPmTk3UmVuzxZKz9Y/AOgq/362UJquNIT1UaXM3Ns3cysk5sLGfPo5o4Ie7Bceh8Ts2hgzdmpUr7w9dZXzuXVgMCRmyh5jWyOgjgg/vlH71Ar4A4lnYBJc1mDYAAAAAElFTkSuQmCC"/>
+                </svg>
+              </a>
+            </li>
+            <li class="user-list__item user-list__item-icon">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="22" viewBox="0 0 23 22">
+                  <image id="ЛК" width="23" height="22" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAYAAAArdgcFAAABdUlEQVQ4je2UvUsDMRjGf61fgxVEsDgeFBRuUA9cBQ8cnHRx7uYoKoiC+AEOLiKK4OIgUnD2T4i4CILELnG0KEI5RdwUkSIpEa71ek3bSfCBG+59k1+e3HNJghgFWecWGIkZkk/nCqO1mu1xcKMX4CyiPltvog38KZ0rLFYXg6yjHffGTUxawJvWPzxSNoGmgqwzEVGPDRNLeAYQNXr5VuCbQF9M/7W+t7+oX3eL6/nTwGGDe9FXxLiS4j1cbKsC6wzOgTRwB7xZPJ/AGFB6LhYqgk9UweeAY2BZSbFnY9n1fH1WroBh/aqkuP/pJUODuoFt4AE4sv0eSooSMA90AfvhXviELgEDwLqS4sMWbha4Bk6AGdfzpyrgruf3AyvmUETd3TZaM/kcuJ7fGXa+AfQAq2abDUtJEQBbwBCwoOcnXM/PmD/jUkkx2aTrsszfJgEHGNTOd4AO7boVsJaS4suEmwJ2NfwROFVS3LQKNwtclHOD4jexWWTNlp3zUwAAAABJRU5ErkJggg=="/>
+                </svg>
+              </a>
+            </li>
+            <li class="user-list__item user-list__item-callback">
+              <button class="user-list__item-button">Обратный звонок</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+    <main class="page-main">
+      <section class="slider">
+        <h1 class="visually-hidden">
+          Слайдеры с новостями
+        </h1>
+        <div class="slider__big">
+          <div class="slider__big-nav">
+          <a class="slider__big-nav-next" href="#"></a>
+          <a class="slider__big-nav-back" href="#"></a>
+          </div>
+          <div class="slider__big-button">
+          <a class="slider__big-button-line slider__big-line-active"></a>
+          <a class="slider__big-button-line"></a>
+          <a class="slider__big-button-line"></a>
+          <a class="slider__big-button-line"></a>
+          </div>
+          <img class="slider__big-photo" src="img/slider-big.jpg" width="1130" height="450" aria="Электроинстумент">
+          <h2 class="slider__big-heading"> <span class="slider__big-text">BOSH</span>  и <span class="slider__big-text">DREMEL</span> </h2>
+          <h3 class="slider__big-sale">Уже в продаже</h3>
+          <a class="slider__open-new" href="#">Подробнее</a>
+        </div>
+        <div class="slider__mini">
+          <h2>Товар дня</h2>
+          <a class="slider__mini-nav-next" href="#"></a>
+          <img src="img/slider-mini.jpg" width="218" height="309" aria="Электроинстумент">
+          <h3>ТGLI 12V-80, Аккумуляторный фонарь</h3>
+          <p>2 484,00 ₽</p>
+          <div class="slider__mini-button">
+            <a class="slider__mini-button-one"></a>
+            <a class="slider__mini-button-two"></a>
+            <a class="slider__mini-button-three"></a>
+            <a class="slider__mini-button-four"></a>
+          </div>
+          <button >В корзину</button>
+
+        </div>
+      </section>
+
+
+    </main>
+   </body>
+</html>
