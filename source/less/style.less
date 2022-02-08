@@ -28,45 +28,7 @@
        url('../fonts/roboto/Roboto-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
 }
 
-/* exo-2-regular - latin_cyrillic */
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('../fonts/exo/Exo2-SemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-/* exo-2-500 - latin_cyrillic */
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 500;
-  src: local(''),
-       url('../fonts/exo/Exo2-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-/* exo-2-600 - latin_cyrillic */
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 600;
-  src: local(''),
-       url('../fonts/exo/Exo2-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-/* exo-2-700 - latin_cyrillic */
-@font-face {
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('../fonts/exo/Exo2-ExtraBold.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-
-.page {
-  height: 100%;
-}
-
 body {
-  min-width: 1540px;
   margin: 0;
   padding: 0;
   font-family: "Roboto", "Exo 2", "Arial", sans-serif;
@@ -78,10 +40,10 @@ body {
   background-color: @color-white;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 a {
   text-decoration: none;
@@ -99,11 +61,12 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
 
-@import "../less/index_less/main-nav.less";
-@import "../less/index_less/site-list.less";
-@import "../less/index_less/aboutus-list.less";
-@import "../less/index_less/main-wrapper.less";
-@import "../less/index_less/user-nav.less";
-@import "../less/index_less/user-list.less";
-@import "../less/index_less/slider.less";
+@import "../less/index_less/introduce.less";
+@import "../less/index_less/navigation.less";
+@import "../less/index_less/welcome.less";
+@import "../less/index_less/examples.less";
