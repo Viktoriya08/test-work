@@ -1,43 +1,43 @@
 @import "../less/color.less";
 
 
-/* roboto-regular - latin_cyrillic */
+/* regular*/
 @font-face {
-  font-family: "Roboto";
+  font-family: "Myriad Pro";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Roboto Light"),
-       url('../fonts/roboto/Roboto-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-/* roboto-500 - latin_cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local("Roboto"),
-       url('../fonts/roboto/Roboto-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
-}
-/* roboto-700 - latin_cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Roboto Bold"),
-       url('../fonts/roboto/Roboto-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: local("Myriad Pro Regular"),
+       url('../fonts/myriad/MyriadPro-Semibold.woff') format('truetype'),
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Exo 2", "Arial", sans-serif;
+  font-family: "Myriad Pro Regular", "Arial", sans-serif;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
   color: @color-basic;
   text-transform: none;
   background-color: @color-white;
+  @media (max-width: 600px) {
+    line-height: 16px;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 /* img {
@@ -62,11 +62,37 @@ a {
   overflow: hidden;
 }
 .container {
-  max-width: 1170px;
+  max-width: 1210px;
   margin: 0 auto;
+  padding: 100px 20px;
+  @media (max-width: 600px) {
+    padding: 50px 10px;
+  }
+}
+.wrapper {
+  max-width: 1210px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media (max-width: 600px) {
+    padding: 0 10px;
+  }
 }
 
 @import "../less/index_less/introduce.less";
 @import "../less/index_less/navigation.less";
 @import "../less/index_less/welcome.less";
 @import "../less/index_less/examples.less";
+@import "../less/index_less/about.less";
+@import "../less/index_less/skills.less";
+@import "../less/index_less/main.less";
+@import "../less/index_less/services.less";
+@import "../less/index_less/cases.less";
+@import "../less/index_less/reviews.less";
+@import "../less/index_less/team.less";
+@import "../less/index_less/possibilites.less";
+@import "../less/index_less/button.less";
+@import "../less/index_less/history.less";
+@import "../less/index_less/recentworks.less";
+@import "../less/index_less/order.less";
+@import "../less/index_less/message.less";
+@import "../less/index_less/footer.less";

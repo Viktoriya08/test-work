@@ -1,0 +1,22 @@
+.button__element{
+  color: @color-black;
+  background-color: @color-white;
+  padding: 12px 20px;
+  border: 1px solid @color-grey;
+  width: 155px;
+  font-size: 13px;
+  &--white {
+    background-color:  #7babd800;
+    color: @color-white;
+    border-top: 1px solid #7babd800;
+  }
+  @media (max-width: 600px) {
+    font-size: 9px;
+    width: 120px;
+  }
+}
+.button__element:hover{
+  color: @color-white;
+  background-color: @color-basic;
+  border: 1px solid @color-basic;
+}

@@ -47,9 +47,9 @@ exports.html = html;
 // Scripts
 
 const scripts = () => {
-  return gulp.src("source/js/menuHandler.js")
+  return gulp.src("source/js/*.js")
     .pipe(uglify())
-    .pipe(rename("menuHandler.min.js"))
+    .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }

@@ -1,0 +1,106 @@
+.reviews {
+  text-align: center;
+}
+.reviews__container{
+  padding-bottom: 0;
+  &--top {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+}
+.reviews__wrap {
+  background-color: @color-basic;
+  padding: 70px 0;
+}
+.rewievs__slider {
+  order: 2;
+  max-width: 940px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  & p{
+    color:  @color-white;
+  }
+}
+.rewievs__button {
+  border: 1px solid @color-white;
+  background-color: @color-basic;
+  width: 25px;
+  height: 25px;
+  transform: rotate(45deg);
+  margin: 10px;
+  /* flex-shrink: 0; */
+  position: relative;
+  &--right{
+    order: 3;
+  }
+  &--left{
+    @media (max-width: 600px) {
+      order: 3;
+    }
+  }
+
+  &--right::before{
+    content: "";
+    background-image: url("../img/btn-left-right.svg");
+    background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: center;
+      background-size: auto;
+      top: 0;
+      left: 1px;
+      transform: rotate(134deg);
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+  }
+  &--left::before{
+    content: "";
+    background-image: url("../img/btn-left-right.svg");
+    background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: center;
+      background-size: auto;
+      top: 2px;
+      left: 1px;
+      transform: rotate(315deg);
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+  }
+}
+.reviews__text {
+  padding: 50px 0;
+  z-index: 10;
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
+}
+.reviews__autor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reviews__photo{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+  overflow: hidden;
+  & > img {
+      max-width: 100%;
+      transform: rotate(-45deg) scale(1.42);
+  }
+}
+.rewievs__slider {
+  margin: 0 auto;
+}
+
