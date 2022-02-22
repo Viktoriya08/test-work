@@ -24,6 +24,7 @@
   @media (max-width: 600px) {
     font-size: 12px;
     max-width: 200px;
+    margin-bottom: 35px;
   }
   &::before,
   &::after  {
@@ -69,11 +70,19 @@
     z-index: 0;
     box-shadow: 6px 6px 0 0 #eeeeee;
     margin: 0 auto;
+    @media (max-width: 950px) {
+      height: 25px;
+      width: 25px;
+    }
   }
   @media (max-width: 600px) {
     height: 50px;
     width: 50px;
     box-shadow: 6px 6px 0 0 #eeeeee;
+    &--small {
+      height: 25px;
+      width: 25px;
+    }
   }
 }
 .main-icon__img {
@@ -83,6 +92,9 @@
   color: @color-black;
   text-transform: uppercase;
   font-size: 11px;
+  @media (max-width: 600px) {
+    font-size: 8px;
+  }
 }
 .main-icon__fill path {
   fill: #000000;
@@ -149,15 +161,15 @@
 .main__romb::after{
   content: "";
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background-color: #4187c8;
   position: absolute;
-  transform: rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
   left: 50%;
-  bottom: -13px;
+  bottom: -8px;
 }
-.main__romb.main__romb--small::after{
+.recentworks__item--active.main__romb.main__romb--small::after{
   background-color: @color-basic;
 }
 .main__romb.main__romb--onmap::after{

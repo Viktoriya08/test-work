@@ -38,7 +38,7 @@ exports.styles = styles;
 
 const html = () => {
   return gulp.src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    /* .pipe(htmlmin({ collapseWhitespace: true })) */
     .pipe(gulp.dest("build"));
 }
 
@@ -48,8 +48,8 @@ exports.html = html;
 
 const scripts = () => {
   return gulp.src("source/js/*.js")
-    .pipe(uglify())
-    .pipe(rename("script.min.js"))
+    /* .pipe(uglify())
+    .pipe(rename("script.min.js")) */
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
@@ -143,6 +143,7 @@ exports.reload = reload;
 const watcher = () => {
   gulp.watch("source/less/**/*.less", gulp.series(styles));
   gulp.watch("source/*.html", gulp.series(html, reload));
+  gulp.watch("source/js/*.js", gulp.series(html, reload));
 }
 
 exports.wawatcher =watcher;

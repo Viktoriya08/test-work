@@ -22,7 +22,7 @@
       </div>
     </section>
     <header class="navigation">
-      <div class="container navigation__container">
+      <nav class="container navigation__container">
         <img src="img/logo-menu.png" alt="" class="navigation__logo" width="70" height="25">
         <div class="navigation__box">
           <ul class="navigation__list">
@@ -37,8 +37,8 @@
             <li class="navigation__item"><span>contacts</span></li>
             <li class="navigation__item"><span>blog</span></li>
           </ul>
-      </div>
-      </div>
+        </div>
+      </nav>
     </header>
     <section class="welcome">
       <div class="container main">
@@ -286,63 +286,129 @@
           <button class="cases__button cases__button--right"></button>
         </div>
         <ul class="cases__list">
-          <li class="cases__item">
-            <div class="cases__icon">
-              <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
-                <use xlink:href="img/sprite.svg#about-icon1"></use>
-              </svg>
-            </div>
-            <p>VIDEO PRODUCTION</p>
+          <li id="tab1" class="cases__item">
+              <div class="cases__icon">
+                  <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
+                      <use xlink:href="img/sprite.svg#about-icon1"></use>
+                  </svg>
+              </div><p>VIDEO PRODUCTION</p>
           </li>
-          <li class="cases__item">
-            <div class="cases__icon">
-              <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
-                <use xlink:href="img/sprite.svg#about-icon1"></use>
-              </svg>
-            </div>
-            <p>PHOTOGRAPHY</p>
+          <li id="tab2" class="cases__item">
+              <div class="cases__icon">
+                  <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
+                      <use xlink:href="img/sprite.svg#about-icon1"></use>
+                  </svg>
+              </div><p>PHOTOGRAPHY</p>
           </li>
-          <li class="cases__item cases__item--active">
-            <div class="cases__icon">
-              <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
-                <use xlink:href="img/sprite.svg#about-icon1"></use>
-              </svg>
-            </div>
-            <p>WEB DESIGN & DEVELOPENNT</p>
-            </li>
-          <li class="cases__item">
-            <div class="cases__icon">
-              <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
-                <use xlink:href="img/sprite.svg#about-icon1"></use>
-              </svg>
-            </div>
-            <p>iOS APPLICATIONS</p>
+          <li id="tab3" class="cases__item cases__item--active">
+              <div class="cases__icon">
+                  <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
+                      <use xlink:href="img/sprite.svg#about-icon1"></use>
+                  </svg>
+              </div>
+              <p>WEB DESIGN &amp; DEVELOPENNT</p>
           </li>
-          <li class="cases__item">
-            <div class="cases__icon">
-              <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
-                <use xlink:href="img/sprite.svg#about-icon1"></use>
-              </svg>
-            </div>
-            <p>SOCIAL MEDIA</p>
+          <li id="tab4" class="cases__item">
+              <div class="cases__icon">
+                  <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
+                      <use xlink:href="img/sprite.svg#about-icon1"></use>
+                  </svg>
+              </div>
+              <p>iOS APPLICATIONS</p>
+          </li>
+          <li id="tab5" class="cases__item">
+              <div class="cases__icon">
+                  <svg class="about-icon1" viewBox="0 0 70 50" width="30" height="30">
+                      <use xlink:href="img/sprite.svg#about-icon1"></use>
+                  </svg>
+              </div>
+              <p>SOCIAL MEDIA</p>
           </li>
         </ul>
-        <div class="cases__example">
-          <div class="cases__description">
-            <h2>Web Design & Development</h2>
-            <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium.
-              Maorbi quis nulla vehicula felsd laoreet. Sed ullamcorper arcu eul ante.
-              Sed tempus tempor cild  Nulla vierra ultrices magnal Nam rutrum congue diam.
-            </p>
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Utdi eni ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-              ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
-            </p>
-            <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
-          </div>
-          <div class="cases__img">
-            <img src="img/cases-img.png" alt="" width="655" height="391">
-          </div>
+        <div data-id="tab3" class="cases__wrap cases__wrap--active">
+            <div class="cases__example">
+                <div class="cases__description">
+                    <h2>Web Design &amp; Development</h2>
+                    <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet. 
+                        Sed ullamcorper arcu eul ante. Sed tempus tempor cild Nulla vierra ultrices magnal Nam rutrum congue diam.
+                    </p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utdi eni ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
+                    </p>
+                    <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
+                </div>
+                <div class="cases__img">
+                    <img src="img/cases-img.png" alt="" width="655" height="391">
+                </div>
+            </div>
+        </div>
+        <div data-id="tab1" class="cases__wrap">
+            <div class="cases__example">
+                <div class="cases__description">
+                    <h2>VIDEO PRODUCTION</h2>
+                    <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet. 
+                        Sed ullamcorper arcu eul ante. Sed tempus tempor cild Nulla vierra ultrices magnal Nam rutrum congue diam.
+                    </p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utdi eni ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
+                    </p>
+                    <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
+                </div>
+                <div class="cases__img">
+                    <img src="img/cases-img.png" alt="" width="655" height="391">
+                </div>
+            </div>
+        </div>
+        <div data-id="tab2" class="cases__wrap">
+            <div class="cases__example">
+                <div class="cases__description">
+                    <h2>PHOTOGRAPHY</h2>
+                    <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet. 
+                        Sed ullamcorper arcu eul ante. Sed tempus tempor cild Nulla vierra ultrices magnal Nam rutrum congue diam.
+                    </p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utdi eni ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
+                    </p>
+                    <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
+                </div>
+                <div class="cases__img">
+                    <img src="img/cases-img.png" alt="" width="655" height="391">
+                </div>
+            </div>
+        </div>
+        <div data-id="tab4" class="cases__wrap">
+            <div class="cases__example">
+                <div class="cases__description">
+                    <h2>iOS APPLICATIONS</h2>
+                    <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet. 
+                        Sed ullamcorper arcu eul ante. Sed tempus tempor cild Nulla vierra ultrices magnal Nam rutrum congue diam.
+                    </p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utdi eni ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
+                    </p>
+                    <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
+                </div>
+                <div class="cases__img">
+                    <img src="img/cases-img.png" alt="" width="655" height="391">
+                </div>
+            </div>
+        </div>
+        <div data-id="tab5" class="cases__wrap">
+            <div class="cases__example">
+                <div class="cases__description">
+                    <h2>SOCIAL MEDIA</h2>
+                    <p>Ut molestie ultricies quam. Donec at sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet. 
+                        Sed ullamcorper arcu eul ante. Sed tempus tempor cild Nulla vierra ultrices magnal Nam rutrum congue diam.
+                    </p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utdi eni ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip exe commodo consequat. Duis aute irure dolor reprehenderit.
+                    </p>
+                    <a class="cases__description-more main__line main__line--grey" href="#">LEARN MORE</a>
+                </div>
+                <div class="cases__img">
+                    <img src="img/cases-img.png" alt="" width="655" height="391">
+                </div>
+            </div>
         </div>
       </div>
     </section>
@@ -353,8 +419,8 @@
       </div>
       <div class="reviews__wrap">
         <div class="container reviews__container reviews__container--top">
-          <button class="rewievs__button rewievs__button--left"></button>
-          <button class="rewievs__button rewievs__button--right"></button>
+          <!-- <button class="rewievs__button rewievs__button--left"></button>
+          <button class="rewievs__button rewievs__button--right"></button> -->
           <div class="reviews__slick">
             <div class="rewievs__slider">
               <div class="reviews__photo">
@@ -368,9 +434,30 @@
               <p class="reviews__autor main__line">Mike Taylor</p>
               <p>CEO WARNET TEL</p>
             </div>
-            <!-- <div class="rewievs__slider">
+            <div class="rewievs__slider">
               <div class="reviews__photo">
-                <img src="img/revievs-autor.jpg" alt="" width="130" height="130">
+                <img src="img/revievs-autor.jpg" alt="" width="100" height="100">
+              </div>
+              <p class="reviews__text">
+                Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
+                Sed ullamcorper arcu ante sed ipsum tempus tempor orcide. Nulla vierra ultrices magnal Nam rutrum c
+                ongue diam. Vestibulum non lorem. Aliquam ullamcorper sem.
+                Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
+                Sed ullamcorper arcu ante sed ipsum tempus tempor orcide. Nulla vierra ultrices magnal Nam rutrum c
+                ongue diam. Vestibulum non lorem. Aliquam ullamcorper sem.
+                Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
+                Sed ullamcorper arcu ante sed ipsum tempus tempor orcide. Nulla vierra ultrices magnal Nam rutrum c
+                ongue diam. Vestibulum non lorem. Aliquam ullamcorper sem.
+                Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
+                Sed ullamcorper arcu ante sed ipsum tempus tempor orcide. Nulla vierra ultrices magnal Nam rutrum c
+                ongue diam. Vestibulum non lorem. Aliquam ullamcorper sem.
+              </p>
+              <p class="reviews__autor main__line">Mike Taylor</p>
+              <p>CEO WARNET TEL</p>
+            </div>
+            <div class="rewievs__slider">
+              <div class="reviews__photo">
+                <img src="img/revievs-autor.jpg" alt="" width="100" height="100">
               </div>
               <p class="reviews__text">
                 Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
@@ -382,7 +469,7 @@
             </div>
             <div class="rewievs__slider">
               <div class="reviews__photo">
-                <img src="img/revievs-autor.jpg" alt="" width="130" height="130">
+                <img src="img/revievs-autor.jpg" alt="" width="100" height="100">
               </div>
               <p class="reviews__text">
                 Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
@@ -392,18 +479,6 @@
               <p class="reviews__autor main__line">Mike Taylor</p>
               <p>CEO WARNET TEL</p>
             </div>
-            <div class="rewievs__slider">
-              <div class="reviews__photo">
-                <img src="img/revievs-autor.jpg" alt="" width="130" height="130">
-              </div>
-              <p class="reviews__text">
-                Molestie ultricies quam. Donec sem. Praesent pretium. Maorbi quis nulla vehicula felsd laoreet.
-                Sed ullamcorper arcu ante sed ipsum tempus tempor orcide. Nulla vierra ultrices magnal Nam rutrum c
-                ongue diam. Vestibulum non lorem. Aliquam ullamcorper sem.
-              </p>
-              <p class="reviews__autor main__line">Mike Taylor</p>
-              <p>CEO WARNET TEL</p>
-            </div> -->
           </div>
 
         </div>
@@ -640,7 +715,7 @@
           </li>
         </ul>
         <div class="recentworks__cont">
-          <a class="recentworks__box" href="#">
+          <div class="recentworks__box" href="#">
             <div class="thumbs">
               <img src="img/recentworks1.jpg"/>
               <div class="caption__icon main-icon__box main-icon__box--small">
@@ -651,7 +726,7 @@
                   <span class="recentworks__back-s">BRANDING & IDENTITY</span>
               </div>
             </div>
-          </a>
+          </div>
           <a class="recentworks__box" href="#">
             <div class="thumbs">
               <img src="img/recentworks2.jpg"/>
@@ -804,8 +879,8 @@
           <p>© MiKE - Webworldpk 2015</p>
         </div>
     </footer>
-    <!-- <script src="https=://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/slick.min.js"></script>
-    <script src="./js/script.min.js"></script> -->
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -5,9 +5,9 @@
   padding-bottom: 0;
   &--top {
     padding-top: 0;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     @media (max-width: 600px) {
       flex-direction: column;
     }
@@ -18,6 +18,7 @@
   padding: 70px 0;
 }
 .rewievs__slider {
+  margin: 20px auto 20px;
   order: 2;
   max-width: 940px;
   display: flex;
@@ -100,7 +101,85 @@
       transform: rotate(-45deg) scale(1.42);
   }
 }
-.rewievs__slider {
-  margin: 0 auto;
+
+/* .slider {
+  min-width: 0;
+} */
+.slick-track{
+  display: flex;
+}
+.slick-list {
+  overflow: hidden;
+}
+.reviews__slick {
+  position: relative;
+  & .slick-arrow.slick-prev{
+    left: -20px;
+    transform: rotate(-45deg);
+    display: flex;
+  }
+  & .slick-arrow.slick-next{
+    right: -20px;
+    transform: rotate(-45deg);
+    display: flex;
+  }
+}
+.reviews__slick .slick-arrow{
+  position: absolute;
+  top:50%;
+  margin: -10px 0 0 0;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  border:1px solid @color-white;
+  background-color: @color-basic;
+  cursor: pointer;
+}
+.reviews__slick .slick-arrow:hover{
+  background-color: @color-blue;
+}
+.reviews__slick .slick-arrow:active{
+  transform: rotate(-45deg) scale(1.12);
+}
+.reviews__slick .slick-arrow.slick-prev::after{
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/btn-wite.png");
+    background-repeat: no-repeat;
+    background-position-y: center;
+  transform: rotate(45deg);
+}
+.reviews__slick .slick-arrow.slick-next::after{
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-image: url("../img/btn-wite.png");
+  background-repeat: no-repeat;
+  background-position-y: center;
+  transform: rotate(225deg);
+}
+.reviews__slick .slick-dots{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviews__slick .slick-dots li  {
+  list-style: none;
+  margin: 0 10px;
+}
+.reviews__slick .slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  background-color: @color-white;
+  border-radius: 50%;
+  border: none;
 }
 
+.reviews__slick .slick-dots li.slick-active button{
+  background-color: transparent;
+  border: 1px solid @color-white;
+}

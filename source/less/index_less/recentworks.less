@@ -6,19 +6,30 @@
   flex-wrap: wrap;
   color: @color-grey-black;
   font-size: 11px;
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
   & .recentworks__item:nth-last-child(2) {
     flex-grow: 1;
     text-align: left;
+    @media (max-width: 600px) {
+      flex-grow: 0;
+      text-align: center;
+    }
   }
   & > .recentworks__item{
     padding: 10px 20px;
     min-width: 110px;
     border: 1px solid #dddddd;
     border-bottom: 3px solid @color-basic;
+    @media (max-width: 600px) {
+      padding: 5px 10px;
+    }
     &--active {
       position: relative;
       background-color: @color-basic;
       color: @color-white;
+      border-color: @color-basic;
     }
   }
 }
@@ -27,6 +38,9 @@
   text-decoration: none;
   width: 25%;
   height: auto;
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 }
 .recentworks__cont {
   margin-top: 50px;
@@ -77,6 +91,9 @@
   text-align: center;
   transition: 0.6s linear;
   opacity: 0;
+  @media (max-width: 950px) {
+    padding: 10px 0;
+  }
 }
 .thumbs .caption__icon {
   left: 40%;
@@ -96,6 +113,13 @@
   width: 17px;
   height: 17px;
   background: url("../img/plus.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 950px) {
+    width: 10px;
+    height: 10px;
+  }
+
 }
 .thumbs .caption span {
   display: block;
@@ -114,12 +138,18 @@
   font-weight: normal;
   font-size: 16px;
   color: @color-black;
+  @media (max-width: 950px) {
+    font-size: 10px;
+  }
 }
 .thumbs .caption .recentworks__back-s {
   line-height: 1.2;
   margin-top: 5px;
   font-size: 12px;
   color: @color-grey;
+  @media (max-width: 950px) {
+    font-size: 9px;
+  }
 }
 .thumbs:focus:before,
 .thumbs:focus .caption, .thumbs:hover:before,
@@ -156,6 +186,9 @@
   width: -webkit-fill-available;
   padding-left: 20px;
 }
+.sotrby__list.active {
+  display: block;
+}
 .sotrby{
   display: flex;
   justify-content: center;
@@ -172,4 +205,20 @@
   background: url(../img/btn-down.png) no-repeat;
   background-position-y: center;
   background-position-x: center;
+}
+.sotrby.active::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  margin-left: 10px;
+  background: url(../img/btn-down.png) no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  transform: rotate(180deg);
+}
+.sotrby__item {
+  cursor: pointer;
+  padding: 5px;
 }
