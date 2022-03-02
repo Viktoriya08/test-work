@@ -85,8 +85,8 @@ $(document).ready(function(){
 
 /* recentworks__item */
   $('.recentworks__item:not(.recentworks__item.sotrby)').click(function(e){
-    $('.recentworks__item').removeClass('recentworks__item--active');
-    $(this).addClass('recentworks__item--active');
+    $('.recentworks__item').removeClass('recentworks__item--active').removeClass('main__romb');
+    $(this).addClass('recentworks__item--active').addClass('main__romb');
   });
 
 /* navigation__box */
@@ -94,6 +94,34 @@ $(document).ready(function(){
   $(".navigation__box").click(function(e){
     $(".navigation__box").toggleClass("active");
     $(".navigation__list").toggleClass("active");
+  });
+  $(".navigation__item").click(function(e){
+    $(".navigation__item").removeClass("active");
+    $(this).addClass("active");
+  });
+
+/* fancybox */
+  $("[data-fancybox]").fancybox();
+
+/* map */
+  
+  $(".map__address-box--head").click(function(e){
+    $(this).find(".map__office-line").toggleClass("open");
+    $(this).children(".map__address").toggleClass("open");
+  });
+  $(".map__address-box--branch").click(function(e){
+    $(this).find(".map__office-line").toggleClass("open");
+    $(this).children(".map__address").toggleClass("open");
+  });
+
+/* прокручиваем страницу к требуемому элементу */
+  $(".navigation__item a, .footer__list a").click(function(e) {
+    var el = $(this);
+    var dest = el.attr('href'); // получаем направление
+    $('html').animate({ 
+      scrollTop: $(dest).offset().top // прокручиваем страницу к требуемому элементу
+    }, 800 // скорость прокрутки
+    );
   });
 
 })

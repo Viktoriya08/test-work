@@ -10,7 +10,14 @@
   src: local("Myriad Pro Regular"),
        url('../fonts/myriad/MyriadPro-Semibold.woff') format('truetype'),
 }
-
+@font-face {
+  font-family: "Myriad Pro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Myriad Pro Regular"),
+       url('../fonts/myriad/MyriadPro-Light.woff') format('truetype'),
+}
 body {
   margin: 0;
   padding: 0;
@@ -21,9 +28,7 @@ body {
   color: @color-basic;
   text-transform: none;
   background-color: @color-white;
-  @media (max-width: 600px) {
-    line-height: 16px;
-  }
+  height: 100%;
 }
 h1,
 h2,
@@ -76,6 +81,11 @@ a {
   @media (max-width: 600px) {
     padding: 0 10px;
   }
+}
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @import "../less/index_less/introduce.less";

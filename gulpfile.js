@@ -33,6 +33,16 @@ const styles = () => {
 }
 
 exports.styles = styles;
+//Jquery
+
+const jq = () => {
+  return gulp.src("source/jquery/*.css")
+    /* .pipe(htmlmin({ collapseWhitespace: true })) */
+    .pipe(gulp.dest("build/jquery"));
+}
+
+exports.jq = jq;
+
 
 // HTML
 
@@ -154,6 +164,7 @@ const build = gulp.series(
   clean,
   gulp.parallel(
     styles,
+    jq,
     html,
     scripts,
     sprite,
@@ -170,6 +181,7 @@ exports.default = gulp.series(
   clean,
   gulp.parallel(
     styles,
+    jq,
     html,
     scripts,
     sprite,

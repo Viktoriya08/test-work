@@ -37,6 +37,7 @@
     "*.json",
     "*.js",
     "source/*.html",
+    "source/jquery/*.css",
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/less/**/*.less"

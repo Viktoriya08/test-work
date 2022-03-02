@@ -3,11 +3,17 @@
   background-color: @color-black;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
   min-height: 100vh;
   color: @color-white;
-    @media (max-width: 950px) {
-      min-height: 100%;
-    }
+  & .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+/*     width: 100%; */
+    padding: 0 20px;
+  }
 }
 /* .introduce__logo {
   margin-top: 135px;
@@ -36,12 +42,16 @@
 }
 .introduce__who {
   font-size: 18px;
-  margin-bottom: 20px;
-  @media (max-width: 950px) {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  /* @media (max-width: 950px) {
     margin-bottom: 10px;
-  }
+  } */
   @media (max-width: 600px) {
     font-size: 14px;
+    margin-bottom: 30px;
   }
 }
 .introduce__h2{
@@ -66,4 +76,8 @@
   @media (max-width: 600px) {
     font-size: 12px;
   }
+}
+.introduce__logo{
+  max-width: 145px;
+  height: auto;
 }

@@ -22,6 +22,7 @@
     min-width: 110px;
     border: 1px solid #dddddd;
     border-bottom: 3px solid @color-basic;
+    line-height: 1.5;
     @media (max-width: 600px) {
       padding: 5px 10px;
     }
@@ -68,6 +69,7 @@
   top: 0;
   left: 0;
   z-index: 2;
+  pointer-events: none;
   /* -webkit-transition-property: top, opacity;
   transition-property: top, opacity;
   -webkit-transition-duration: 0.3s;
@@ -91,6 +93,7 @@
   text-align: center;
   transition: 0.6s linear;
   opacity: 0;
+  pointer-events: none;
   @media (max-width: 950px) {
     padding: 10px 0;
   }
@@ -107,6 +110,7 @@
   transition-duration: 0.3s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
+  pointer-events: none;
 }
 .thumbs .caption__icon::before{
   content: "";
