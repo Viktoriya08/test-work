@@ -1,0 +1,15 @@
+extends ../components/layouts/main-layout
+
+block variables
+  -
+    title = 'UI-kit'
+    hasFooter = false
+    hasHeader = false
+
+block main
+  style
+    include ../styles/ui-kit.css
+
+  main.container
+    .wrapper
+      +btn() Button

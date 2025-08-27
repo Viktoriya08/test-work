@@ -1,0 +1,19 @@
+mixin textarea(props = {})
+  -
+    const variant = props.var && `textarea--var-${props.var}`
+    const size = props.size && `textarea--size-${props.size}`
+    const mod = props.size && `textarea--${props.mod}`
+
+  textarea.textarea(
+    name=props.name
+    minlength=props.min
+    maxlength=props.max
+    placeholder=props.placeholder
+    class=variant
+    class=size
+    class=mod
+  )&attributes(attributes)
+    if props.value
+      =props.value
+    else
+      block

@@ -1,0 +1,69 @@
+// Base
+$width: 1200px;
+$url-img: '../img/bg';
+$url-font: '../fonts';
+
+// Colors
+$colors: (
+  'white': #fff,
+  'black': #131212,
+  'primary': #fb6542,
+  'main': #f5da5a,
+  'accent': #5983d5,
+  'muted': #eee,
+  'link': red,
+  'link-hover': blue,
+);
+
+$space: (
+  'xs': 2px,
+  'sm': 4px,
+  'md': 8px,
+  'lg': 16px,
+  'xl': 24px,
+  'xxl': 32px,
+);
+
+// Transitions (https://easings.net/ru)
+$trans: (
+  'fast': 0.1s ease,
+  'base': 0.3s ease,
+  'long': 0.5s ease,
+);
+
+$shadows: (
+  'block': '0 0 1px #000'
+);
+
+$zindex: (
+  'modal': 999,
+  'header': 99,
+  'menu': 98,
+);
+
+// Safe font-family
+$font-Gotham: 'Gotham Pro', sans-serif;
+
+// Font
+$font-family: $font-Gotham;
+$font-base-size: 16px;
+$font-base-lh: 1.25;
+
+// Forms
+$field-base: 40px;
+$btn-line-height: $font-base-lh;
+
+// Media
+$media-fullhd: 1920px;
+$media-quadhd: 1440px;
+$media-hd: 1280px;
+$media-desktop: 1024px;
+$media-notebook: 960px;
+$media-tablet: 768px;
+$media-smartphone: 620px;
+$media-phone: 480px;
+$media-last: 375px;
+
+// Retina
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

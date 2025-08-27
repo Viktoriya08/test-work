@@ -1,8 +1,53 @@
-{
+{# http://stylelint.io/user-guide/rules/
+  "syntax": "scss",
   "extends": "stylelint-config-htmlacademy",
-
   "rules": {
-    "declaration-no-important": true,
-    "indentation": [2, {"ignore": ["inside-parens"]}]
+    "max-nesting-depth": 3,
+    "codeguide/string-quotes":  ["single", {
+      "message": "Кавычки должны быть одиночные"
+    }],
+    "codeguide/indentation": [2, {"ignore": ["inside-parens"]}],
+    "declaration-no-important": [true, {
+      "message": "!important нужно применять осторожно",
+      "severity": "warning"
+    }],
+    "color-hex-length": ["short", {
+      "message": "HEX цвета можно сократить до 3-ёх символов",
+    }],
+    "at-rule-no-unknown": [true, {
+      "message": "Неизвестное @-правило",
+      ignoreAtRules: [
+        "/^at-/",
+        "/^use/",
+        "/^forward/",
+        "/^mixin/",
+        "/^include/",
+        "/^if/",
+        "/^else/",
+        "/^function/",
+        "/^return/",
+        "/^each/",
+      ]
+    }],
+    "function-no-unknown": [true, {
+      "ignoreFunctions": [
+        "dvh",
+        "size",
+        "lh",
+        "unit-from",
+        "strip-unit",
+        "from-percent-to-abs",
+        "letter-spacing",
+      ],
+    }],
+    "no-invalid-position-at-import-rule": [true, {
+      "message": "@import в начале",
+      ignoreAtRules: [
+        "/^use/",
+        "/^forward/",
+      ],
+    }],
+    "block-closing-brace-newline-after": null,
+    "at-rule-empty-line-before": null,
   }
 }

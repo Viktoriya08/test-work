@@ -1,0 +1,33 @@
+extends ../components/layouts/main-layout
+
+block variables
+  -
+    title = 'Список страниц'
+    hasFooter = false
+    hasHeader = false
+    const pages = [
+      {
+        name: 'UI-kit',
+        src: 'ui-kit'
+      },
+      {
+        name: 'Главная',
+        src: 'index'
+      },
+      {
+        name: 'Ошибка ',
+        src: '404'
+      },
+    ]
+
+block main
+  style
+    include ../styles/sitemap.css
+
+  main.container
+    .wrapper
+      h1 Список страниц
+      ol
+        each page in pages
+          li
+            a(href=`${page.src}.html`)= `${page.name} - ${page.src}.html`

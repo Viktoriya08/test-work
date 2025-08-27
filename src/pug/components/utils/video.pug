@@ -1,0 +1,17 @@
+mixin video(props = {})
+  -
+    const items = props.sources || []
+
+  video.video(
+    autoplay=props.isAutoplay
+    controls=props.hasControls
+    playsinline
+    loop=props.isLoop
+    muted=props.isMuted
+    disablepictureinpicture
+  )&attributes(attributes)
+    each item in items
+      source(
+        src=item.src
+        type=item.type || "video/mp4"
+      )

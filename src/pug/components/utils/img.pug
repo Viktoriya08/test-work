@@ -1,0 +1,17 @@
+mixin img(props = {})
+  -
+    const isSvg = props.format === 'svg'
+    const path = props.path || ''
+    const name = props.name || ''
+    const alt = props.alt || ''
+    const format = props.format || 'jpg'
+
+  img(
+    src= name ? `img/${path}/${name}.${format}` : ''
+    srcset= name && !isSvg ? `img/${path}/${name}@2x.${format} 2x` : false
+    width= props.width
+    height= props.height
+    alt= alt
+    loading= props.isLazy && 'lazy'
+    draggable="false"
+  )&attributes(attributes)

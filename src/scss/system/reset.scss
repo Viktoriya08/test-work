@@ -1,0 +1,322 @@
+/* stylelint-disable declaration-no-important */
+/* stylelint-disable property-no-vendor-prefix */
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+em,
+strike,
+strong,
+s,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video,
+main {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+main,
+menu,
+picture {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  text-align: left;
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  font: 400 var(--font-size) / var(--font-lh) var(--font-family);
+}
+
+[data-theme='dark'] {
+  background-color: var(--color-bg-tetriary);
+  color: var(--color-text-primary-reverse);
+}
+
+html,
+body {
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Links
+a {
+  background: transparent;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  text-decoration-skip: objects;
+  text-decoration: none;
+}
+
+a:focus {
+  // outline: thin dotted;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+a,
+area,
+button,
+input:not([type='range']),
+label,
+select,
+textarea,
+.btn {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+// content
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+img {
+  border-style: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+// tables
+table {
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  empty-cells: show;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
+
+th {
+  text-align: inherit;
+}
+
+// Controls
+input,
+textarea,
+select,
+optgroup,
+button {
+  color: inherit;
+  font-family: inherit;
+  line-height: var(--font-lh);
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  border-radius: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type='checkbox'] {
+  vertical-align: baseline;
+}
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
+button,
+label,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  cursor: pointer;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  border-style: none;
+}
+
+[role='button'] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+  cursor: pointer;
+}
+
+input[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+  border-radius: 0;
+  padding: 0;
+}
+
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+[tabindex='-1']:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
+input[placeholder] {
+  text-overflow: ellipsis;
+}

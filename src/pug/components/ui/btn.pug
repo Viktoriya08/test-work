@@ -1,0 +1,21 @@
+mixin btn(props = {})
+  -
+    const tag = props.href ? 'a' : 'button'
+    const target = props.isExternal && '_blank'
+    const type = (props.type || tag === 'button') ? props.type || 'button' : false
+    const size = props.size && `btn--size-${props.size}`
+    const variant = props.var && `btn--var-${props.var}`
+    const mod = props.mod && `btn--${props.mod}`
+
+  #{tag}.btn(
+    href=props.href
+    target=target
+    rel=props.isExternal && 'nofollow noopener noreferrer'
+    type=type
+    class=size
+    class=variant
+    class=mod
+    aria-label=props.ariaLabel
+    title=props.title
+  )&attributes(attributes)
+    block

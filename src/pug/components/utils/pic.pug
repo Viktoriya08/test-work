@@ -1,0 +1,41 @@
+mixin pic(props = {})
+  -
+    const path = props.path || ''
+    const name = props.name || ''
+    const format = props.format || 'jpg'
+    const sources = props.sources || []
+
+  picture.picture&attributes(attributes)
+    each source in sources
+      if source.format !== 'svg'
+        source(
+          type=`image/${source.format || format}`
+          media=source.media
+          srcset=`img/${path}/${source.name}.${source.format || format}, img/${path}/${source.name}@2x.${source.format || format} 2x`
+        )
+      else
+        source(
+          type=`image/svg+xml`
+          media=source.media
+          srcset=`img/${path}/${source.name}.svg`
+        )
+
+    if format !== 'svg'
+      //- source(
+      //-   type='image/avif'
+      //-   srcset=`img/${path}/${name}.avif img/${path}/${name}@2x.avif 2x`
+      //- )
+      source(
+        type="image/webp"
+        srcset=`img/${path}/${name}.webp, img/${path}/${name}@2x.webp 2x`
+      )
+
+    img(
+      src=`img/${path}/${name}.${format}`
+      srcset= format === 'svg' ? false : `img/${path}/${name}@2x.${format} 2x`
+      width= props.width
+      height= props.height
+      alt= props.alt || ''
+      class= props.imgClass
+      loading=props.lazy ? 'lazy' : false
+    )

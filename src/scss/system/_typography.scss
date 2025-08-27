@@ -1,0 +1,19 @@
+// Titles
+@mixin titleH1 {
+  @include font-size(34px);
+  font-weight: 700;
+}
+
+// Text
+@mixin textBase {
+  @include font-size(14px, 18px);
+}
+
+// UI
+@mixin btn-base {
+  @include font-size(16px, 24px);
+}
+
+@mixin field-base {
+  @include font-size(16px, 24px);
+}

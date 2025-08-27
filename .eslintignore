@@ -1,0 +1,5 @@
+
+src/pug/scripts/*.js
+gulp.config.js
+gulpfile.js
+vite.config.js

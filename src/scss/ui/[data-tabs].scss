@@ -1,0 +1,10 @@
+[data-tabs-blocks] > * {
+  display: none;
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+    display: block;
+    animation: display-none 0.3s ease;
+  }
+}

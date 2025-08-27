@@ -1,0 +1,11 @@
+mixin hero-section(props = {})
+
+  section.hero-section&attributes(attributes)
+    .width
+      h1 IT CRON
+
+      +pic({name: 'logo', format: 'svg', path: 'content'})
+
+      p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima quam, ipsam a itaque excepturi cumque explicabo exercitationem corrupti iure nesciunt sed commodi eum, tempore maiores quibusdam non. Sit, doloribus neque.
+
+      +btn({var: 'main', size: 'base'})(data-open-modal="#modal-feedback") Click me

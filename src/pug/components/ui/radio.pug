@@ -1,0 +1,19 @@
+mixin radio(props = {})
+  -
+    const variant = props.variant && `radio--var-${props.var}`
+    const size = props.size && `radio--size-${props.size}`
+
+  #{props.noLabel ? 'div' : 'label'}.radio(
+    class=variant
+    class=size
+  )&attributes(attributes)
+    input(
+      id=props.id
+      type="radio"
+      name= props.name
+      value= props.value
+      checked= props.isChecked
+      disabled= props.isDisabled
+    )
+    span.radio__title
+      block

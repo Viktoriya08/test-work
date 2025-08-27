@@ -1,0 +1,7 @@
+.width {
+  width: 100%;
+  max-width: calc(#{$width} + (#{rem(20)} * 2));
+  margin-inline: auto;
+  padding-inline: rem(20);
+  flex: 0 0 auto;
+}

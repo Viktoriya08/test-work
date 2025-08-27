@@ -1,0 +1,14 @@
+.no-wrap {
+  white-space: nowrap;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.icn {
+  display: inline-block;
+  fill: currentColor;
+  flex: 0 0 auto;
+  user-select: none;
+}

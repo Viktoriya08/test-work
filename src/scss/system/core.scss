@@ -1,0 +1,38 @@
+:root {
+  --scale-vw: calc(1920 / 100);
+
+  --font-family: #{$font-family};
+  --font-size: #{rem($font-base-size)};
+  --font-lh: #{$font-base-lh};
+
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $space {
+    --space-#{$name}: #{rem($value)};
+  }
+
+  @each $name, $value in $trans {
+    --trans-#{$name}: #{$value};
+  }
+
+  @each $name, $shadow in $shadows {
+    --shadow-#{$name}: #{$shadow};
+  }
+
+  @each $name, $z in $zindex {
+    --z-#{$name}: #{$z};
+  }
+
+  // MEDIA
+  @include media(tablet) {
+    --scale-vw: calc(768 / 100);
+  }
+}
+
+.noscript {
+  background: #f00;
+  color: #808080;
+  text-align: center;
+}

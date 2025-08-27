@@ -1,14 +1,34 @@
-.DS_Store
-.idea
-.vscode
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+build
+dist
+dist-ssr
+node_modules
+*.local
 *.ai
 *.log
-*.pdf
 *.psd
+*.zip
+*.rar
+*.mp4
+*.mov
 *.sublime*
-node_modules/
-npm-debug.*
-source/css/*.css
-source/css/*.map
-Thumbs.db
 
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db

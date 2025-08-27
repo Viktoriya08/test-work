@@ -1,0 +1,25 @@
+@import 'system/vars';
+@import 'system/mix';
+@import 'system/functions';
+
+// Vendors
+// @import '../../node_modules/hystmodal/lib/hystmodal.css';
+
+// Global
+// @import 'system/fonts';
+@import 'system/animations';
+@import 'system/reset';
+@import 'system/reboot';
+@import 'system/core';
+@import 'system/typography';
+@import 'system/utils';
+
+// Core styles
+@import 'vendors/*.scss';
+@import 'ui/*.scss';
+@import 'elements/*.scss';
+@import 'blocks/*.scss';
+@import 'sections/*.scss';
+@import 'widgets/*.scss';
+@import 'pages/*.scss';
+@import 'layout/*.scss';

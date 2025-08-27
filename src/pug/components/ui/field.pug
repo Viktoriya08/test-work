@@ -1,0 +1,11 @@
+mixin field(props = {})
+  -
+    const tag = props.isDiv ? 'div' : 'label'
+    const error = props.error
+
+  .field&attributes(attributes)
+    #{tag}.field__wrapper
+      block
+
+    if error
+      .field__error!=error

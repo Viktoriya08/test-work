@@ -1,0 +1,45 @@
+.input,
+.textarea {
+  border: 1px solid transparent;
+  transition: border var(--trans-base), background-color var(--trans-base), color var(--trans-base);
+  background: transparent;
+  width: 100%;
+  resize: none;
+  text-overflow: ellipsis;
+
+  @at-root textarea#{&} {
+    overflow: hidden;
+  }
+
+  &::placeholder {
+    opacity: 1;
+    transition: all var(--trans-base);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // variants
+  &--var-primary {
+    background: var(--color-bg-primary);
+  }
+
+  // sizes
+  &--size-base {
+    @include field-base;
+    height: $field-base;
+    padding-left: rem(16);
+    padding-right: rem(16);
+  }
+
+  @at-root textarea#{&}--size-base {
+    min-height: $field-base * 2;
+  }
+
+  // states
+  &--has-error:hover,
+  &--has-error {
+    border-color: var(--color-bd-critacal);
+  }
+}

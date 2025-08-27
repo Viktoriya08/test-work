@@ -1,0 +1,41 @@
+@use 'sass:math';
+@import 'vars';
+
+@function rem($fz) {
+  @return #{calc(strip-unit($fz) / strip-unit($font-base-size))}rem;
+}
+
+@function unit-from($all-width, $el-width, $unit: '%') {
+  @return #{calc($el-width / ($all-width / 100))}#{$unit};
+}
+
+@function aspect-ratio($width, $height) {
+  @return #{calc($width / $height)};
+}
+
+// https://www.kevinpowell.co/article/using-my-colors/
+@function color($name) {
+  @return map-get($colors, $name);
+}
+
+// line-height coefficient
+@function lh($font-size, $lineHeight) {
+  @return calc($lineHeight / $font-size);
+}
+
+// viewport height for IOS
+@function dvh($dvh-nums) {
+  @return calc(#{$dvh-nums} * var(--dvh, 1dvh));
+}
+
+@function size($size) {
+  @return #{calc(#{$size} / var(--scale-vw) * var(--vw, 1vw))};
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}

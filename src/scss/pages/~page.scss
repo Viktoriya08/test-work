@@ -1,0 +1,19 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: dvh(100);
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  .ios & {
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    min-height: -webkit-fill-available;
+  }
+
+  &__core {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}

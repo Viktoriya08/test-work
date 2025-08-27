@@ -1,0 +1,15 @@
+body {
+  font-family: var(--font-family);
+  background: #eee;
+}
+
+.container {
+  min-height: 100dvh;
+}
+
+.wrapper {
+  align-self: center;
+  width: 100%;
+  max-width: 1024px;
+  padding: 2rem 1.5rem;
+}

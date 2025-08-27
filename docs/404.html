@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="ru"><head><title>Cedro - 404</title><meta name="description" content="Cedro gulp template"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><script data-skip-moving="true">var ASSETS_PATH = './'
+</script>  <script type="module" crossorigin src="./assets/main.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main.css">
+</head><body><noscript><div class="noscript">Для полноценной работы сайта, необходимо включить JavaScript!</div></noscript><script>(() => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', ASSETS_PATH + 'img/sprite.svg', true);
+  xhr.send();
+  xhr.onload = () => {
+    const div = document.createElement('div');
+    div.className = 'visually-hidden';
+    div.innerHTML = xhr.responseText;
+    document.body.insertBefore(div, document.body.childNodes[0]);
+  }
+})();</script><div class="page"><div class="page__core"><header class="header"><div class="header__grid"><nav class="header__nav"><ul class="menu"><li class="menu__item"><a class="menu__link" href="#">Кейсы</a></li><li class="menu__item"><a class="menu__link" href="#">компания</a></li><li class="menu__item"><a class="menu__link" href="#">Услуги</a></li><li class="menu__item"><a class="menu__link" href="#">Контакты</a></li></ul></nav><button class="header__menu btn"><svg class="icn" width="50" height="50" aria-hidden="true" role="img" focusable="false"><use href="#menu"></use></svg></button></div></header><section class="error-section"><div class="width"><h1 class="error-section__title">404</h1><div class="error-section__text">Ошибка</div></div></section></div><footer class="footer" id="footer"><div class="width"><div class="footer__core">FOOTER</div></div></footer></div></body></html>

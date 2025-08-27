@@ -1,0 +1,27 @@
+{
+  "maximumNumberOfLines": 300,
+  "validateIndentation": 2,
+  "validateLineBreaks": "LF",
+  "validateDivTags": true,
+  "validateAttributeSeparator": {"separator": " ", "multiLineSeparator": "\n  "},
+  "validateAttributeQuoteMarks": "\"",
+  "requireSpecificAttributes": [
+    {"img": ["src", "alt"]},
+    {"video": ["playsinline"]},
+    {"button": ["type"]},
+    {"input": ["type"]}
+  ],
+  "requireLowerCaseTags": true,
+  "requireStrictEqualityOperators": true,
+  "requireClassLiteralsBeforeIdLiterals": true,
+  "disallowTrailingSpaces": true,
+  "disallowLegacyMixinCall": true,
+  "disallowDuplicateAttributes": true,
+  "disallowClassAttributeWithStaticValue": true,
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowSpacesInsideAttributeBrackets:": true,
+  "requireClassLiteralsBeforeAttributes:": true,
+  "requireIdLiteralsBeforeAttributes:": true,
+  "requireLineFeedAtFileEnd:": true
+}

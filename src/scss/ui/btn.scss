@@ -1,0 +1,62 @@
+.btn {
+  box-sizing: border-box;
+  position: relative;
+  bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: $btn-line-height;
+  text-align: center;
+  border: 1px solid transparent;
+  max-width: 100%;
+  opacity: 1;
+  transition: background var(--trans-base), color 0.2s var(--trans-base);
+  text-overflow: ellipsis;
+  user-select: none;
+
+  // states
+  &:hover:not(:disabled),
+  &:hover:not(.is-disabled) {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:active,
+  &.is-active {
+    outline: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  // vars
+  &--var-main {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  // sizes
+  &--size-base {
+    @include btn-base;
+    min-height: $field-base;
+    min-width: $field-base;
+    padding-left: rem(32);
+    padding-right: rem(32);
+  }
+
+  // mods
+  &--fluid {
+    width: 100%;
+    display: flex;
+  }
+
+  &--square {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

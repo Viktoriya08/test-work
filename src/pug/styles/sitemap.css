@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: #eee;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100dvh;
+}
+
+.wrapper {
+  align-self: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 10px 5px 0 rgb(0 0 0 / 5%);
+  border-radius: 10px;
+}
+
+h1 {
+  display: block;
+  cursor: default;
+  font-weight: 700;
+}
+
+li {
+  padding: 0.5rem 0;
+}

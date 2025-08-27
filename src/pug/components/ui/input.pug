@@ -1,0 +1,24 @@
+mixin input(props = {})
+  -
+    const type = props.type || 'text'
+    const isNumber = type === 'number'
+    const variant = props.var && `input--var-${props.var}`
+    const size = props.size && `input--size-${props.size}`
+    const mod = props.size && `input--${props.mod}`
+
+  input.input(
+    type=type
+    name=props.name
+    value=props.value
+    minlength=props.min
+    maxlength=props.max
+    min=isNumber && props.min
+    max=isNumber && props.max
+    placeholder=props.placeholder
+    class=variant
+    class=size
+    class=mod
+    class=(props.isEmail || props.isMail) && 'js-mail'
+    class=(props.isPhone || props.isTel) && 'js-tel'
+    required=props.isRequired
+  )&attributes(attributes)

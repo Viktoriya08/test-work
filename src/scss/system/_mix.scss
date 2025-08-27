@@ -1,0 +1,332 @@
+@mixin font-size($size, $lineHeight: $size) {
+  font-size: $size;
+
+  @if $lineHeight == 0 {
+    line-height: 1;
+  }
+
+  @else {
+    line-height: calc($lineHeight / $size);
+  }
+}
+
+@mixin flex-width($width) {
+  width: $width;
+  max-width: $width;
+  flex: 0 0 $width;
+  min-width: 1px;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin absolute-layer() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hyphens($symbol: '-') {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  // stylelint-disable
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  // stylelint-enable
+  hyphens: auto;
+  hyphenate-character: $symbol;
+}
+
+@mixin text-overflow($value: 1) {
+  @if $value == 0 {
+    max-width: unset;
+    overflow: unset;
+    text-overflow: unset;
+    white-space: unset;
+  }
+
+  @else {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin line-clamp($lines: 3) {
+  @if $lines == 0 {
+    display: block;
+    /* autoprefixer: off */
+    -webkit-line-clamp: none;
+    -webkit-box-orient: initial;
+    /* autoprefixer: on */
+    overflow: unset;
+    text-overflow: unset;
+    word-wrap: unset;
+  }
+
+  @else {
+    // stylelint-disable
+    /* autoprefixer: off */
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    // stylelint-enable
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+}
+
+@mixin hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin img-cover() {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+}
+
+@mixin safari-radius() {
+  // Fix overflow from bd radius
+  // stylelint-disable
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+  // stylelint-enable
+}
+
+@mixin better-fonts() {
+  // For dark backgrounds
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin btn-reset() {
+  border: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+@mixin select-reset() {
+  // stylelint-disable
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  // stylelint-enable
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@mixin blur($val) {
+  // stylelint-disable
+  -webkit-backdrop-filter: blur($val);
+  // stylelint-enable
+  backdrop-filter: blur($val);
+  will-change: backdrop-filter;
+}
+
+@mixin visually-hidden {
+  visibility: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
+// MEDIA
+// Универсальный миксин для медиа-запросов
+@mixin media($media) {
+  @if $media == fullhd {
+    @media only screen and (max-width: rem($media-fullhd)) {
+      @content;
+    }
+  }
+
+  @else if $media == fullhd-after {
+    @media only screen and (max-width: calc(#{rem($media-fullhd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == fullhd-before {
+    @media only screen and (min-width: calc(#{rem($media-fullhd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd {
+    @media only screen and (max-width: rem($media-quadhd)) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd-after {
+    @media only screen and (max-width: calc(#{rem($media-quadhd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd-before {
+    @media only screen and (min-width: calc(#{rem($media-quadhd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == hd {
+    @media only screen and (max-width: rem($media-hd)) {
+      @content;
+    }
+  }
+
+  @else if $media == hd-after {
+    @media only screen and (max-width: calc(#{rem($media-hd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == hd-before {
+    @media only screen and (min-width: calc(#{rem($media-hd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop {
+    @media only screen and (max-width: rem($media-desktop)) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop-after {
+    @media only screen and (max-width: calc(#{rem($media-desktop - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop-before {
+    @media only screen and (min-width: calc(#{rem($media-desktop + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook {
+    @media only screen and (max-width: rem($media-notebook)) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook-after {
+    @media only screen and (max-width: calc(#{rem($media-notebook - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook-before {
+    @media only screen and (min-width: calc(#{rem($media-notebook + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet {
+    @media only screen and (max-width: rem($media-tablet)) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet-after {
+    @media only screen and (max-width: calc(#{rem($media-tablet - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet-before {
+    @media only screen and (min-width: calc(#{rem($media-tablet + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone {
+    @media only screen and (max-width: rem($media-smartphone)) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone-after {
+    @media only screen and (max-width: calc(#{rem($media-smartphone - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone-before {
+    @media only screen and (min-width: calc(#{rem($media-smartphone + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == phone {
+    @media only screen and (max-width: rem($media-phone)) {
+      @content;
+    }
+  }
+
+  @else if $media == phone-before {
+    @media only screen and (min-width: calc(#{rem($media-phone + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == last {
+    @media only screen and (max-width: rem($media-last)) {
+      @content;
+    }
+  }
+
+  @else if $media == retina {
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      @content;
+    }
+  }
+
+  @else if $media == hover {
+    @media (hover: hover) {
+      @content;
+    }
+  }
+
+  @else if $media == touch or $media == coarse {
+    @media (pointer: coarse) {
+      @content;
+    }
+  }
+
+  @else if $media == animation {
+    @media (prefers-reduced-motion: no-preference) {
+      @content;
+    }
+  }
+}

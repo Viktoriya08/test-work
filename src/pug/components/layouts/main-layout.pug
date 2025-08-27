@@ -1,0 +1,89 @@
+doctype html
+-
+  let title = ''
+  let hasHeader = true
+  let hasFooter = true
+  let pageMods = ''
+  let headerMods = ''
+  let footerMods = ''
+  let currentUrl = ''
+
+  const MEDIA = {
+    fullhd: 1920,
+    quadhd: 1440,
+    hd: 1280,
+    desktop: 1024,
+    notebook: 960,
+    tablet: 768,
+    smartphone: 620,
+    phone: 480,
+    last: 375
+  }
+
+block variables
+
+include ../components
+include ../_auto-import
+
+html(lang="ru")
+  head
+    title= `Cedro - ${title}`
+    meta(name="description" content="Cedro gulp template")
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+
+    //- Генерируй тут - https://realfavicongenerator.net/
+    //- в подключение фавикон манифеста добавьте строчки crossorigin="use-credentials"
+
+    //- OpenGraf
+    //- meta(property="og:title" content=`Cedro - ${title}`)
+    //- meta(property="og:description" content="Cedro gulp template")
+    //- meta(property="og:type" content="article") // https://ogp.me/#types
+    //- meta(property="og:url" content="/") // Canonical URL
+
+    //- Socail Sharing с абсолютной ссылкой до картинки
+    //- meta(property="og:image" content="https://site.ru/img/og/1024х512.jpg")
+    //- meta(property="twitter:image" content="https://site.ru/img/og/1024х512.jpg")
+    //- meta(name="twitter:card" content="summary_large_image")
+    //- meta(property="fb:image" content="https://site.ru/img/og/500х261.jpg")
+    //- meta(property="vk:image" content="https://site.ru/img/og/510х228.jpg")
+
+    //- Prevent transform phone number & address to link in Safari
+    meta(name="format-detection" content="telephone=no")
+    meta(name="format-detection" content="address=no")
+
+    //- Preload resources
+    //- link(rel="preload" href="fonts/roboto/Roboto-Regular.woff2" as="font" crossorigin="anonymous")
+
+    link(rel="stylesheet" href="/src/scss/style.scss")
+
+    script(data-skip-moving="true").
+      var ASSETS_PATH = './'
+
+  body(class=bodyMods)
+    noscript
+      .noscript Для полноценной работы сайта, необходимо включить JavaScript!
+
+    +sprite()
+
+    .page(class=pageMods)
+      .page__core
+        if hasHeader
+          +header({
+            mod: headerMods,
+            currentUrl: currentUrl
+          })
+
+        block main
+
+      if hasFooter
+        +footer({
+          mod: footerMods
+        })
+
+    block modals
+
+    script(src="/src/js/main.ts" type="module" defer)
+
+    block scripts

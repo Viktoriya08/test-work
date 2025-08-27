@@ -1,0 +1,33 @@
+html {
+  overscroll-behavior: none;
+
+  text-rendering: optimizeLegibility;
+  // оптимизация выравнивания шрифта относительно центра строки
+  // если по прежнему есть проблемы с выравниванием
+  // https://transfonter.org/ - включите настройку "Fix vertical metrics" и переконвертируйте шрифт
+}
+
+body {
+  scrollbar-gutter: stable;
+  font-family: 'Geometria', sans-serif;
+}
+
+a {
+  text-underline-offset: 0.2em;
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+textarea {
+  // form-sizing: auto;
+}
+
+.swiper-slide {
+  &,
+  * {
+    box-sizing: border-box;
+  }
+}

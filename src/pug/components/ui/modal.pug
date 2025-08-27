@@ -1,0 +1,13 @@
+mixin modal(props = {})
+
+  .hystmodal.modal(
+    id=props.id
+    class=props.mod && `hystmodal--${props.mod}`
+    aria-hidden="true"
+  )&attributes(attributes)
+    .hystmodal__wrap
+      .hystmodal__window(role="dialog" aria-modal="true")
+        unless props.noClose
+          button(type="button" data-hystclose).hystmodal__close &times;
+
+        block

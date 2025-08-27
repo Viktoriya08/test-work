@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="ru"><head><title>Cedro - Список страниц</title><meta name="description" content="Cedro gulp template"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><script data-skip-moving="true">var ASSETS_PATH = './'
+</script>  <script type="module" crossorigin src="./assets/main.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main.css">
+</head><body><noscript><div class="noscript">Для полноценной работы сайта, необходимо включить JavaScript!</div></noscript><script>(() => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', ASSETS_PATH + 'img/sprite.svg', true);
+  xhr.send();
+  xhr.onload = () => {
+    const div = document.createElement('div');
+    div.className = 'visually-hidden';
+    div.innerHTML = xhr.responseText;
+    document.body.insertBefore(div, document.body.childNodes[0]);
+  }
+})();</script><div class="page"><div class="page__core"><style>* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: #eee;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100dvh;
+}
+
+.wrapper {
+  align-self: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 10px 5px 0 rgb(0 0 0 / 5%);
+  border-radius: 10px;
+}
+
+h1 {
+  display: block;
+  cursor: default;
+  font-weight: 700;
+}
+
+li {
+  padding: 0.5rem 0;
+}
+</style><main class="container"><div class="wrapper"><h1>Список страниц</h1><ol><li><a href="ui-kit.html">UI-kit - ui-kit.html</a></li><li><a href="index.html">Главная - index.html</a></li><li><a href="404.html">Ошибка  - 404.html</a></li></ol></div></main></div></div></body></html>
