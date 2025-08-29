@@ -28,14 +28,14 @@
   // sizes
   &--size-base {
     @include field-base;
-    height: $field-base;
+    // height: $field-base;
     padding-left: rem(16);
     padding-right: rem(16);
   }
 
-  @at-root textarea#{&}--size-base {
-    min-height: $field-base * 2;
-  }
+  // @at-root textarea#{&}--size-base {
+  //   min-height: $field-base * 2;
+  // }
 
   // states
   &--has-error:hover,

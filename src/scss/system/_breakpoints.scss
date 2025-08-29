@@ -1,0 +1,171 @@
+// MEDIA
+// Универсальный миксин для медиа-запросов
+@mixin media($media) {
+  @if $media == fullhd {
+    @media only screen and (max-width: rem($media-fullhd)) {
+      @content;
+    }
+  }
+
+  @else if $media == fullhd-after {
+    @media only screen and (max-width: calc(#{rem($media-fullhd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == fullhd-before {
+    @media only screen and (min-width: calc(#{rem($media-fullhd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd {
+    @media only screen and (max-width: rem($media-quadhd)) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd-after {
+    @media only screen and (max-width: calc(#{rem($media-quadhd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == quadhd-before {
+    @media only screen and (min-width: calc(#{rem($media-quadhd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == hd {
+    @media only screen and (max-width: rem($media-hd)) {
+      @content;
+    }
+  }
+
+  @else if $media == hd-after {
+    @media only screen and (max-width: calc(#{rem($media-hd - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == hd-before {
+    @media only screen and (min-width: calc(#{rem($media-hd + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop {
+    @media only screen and (max-width: rem($media-desktop)) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop-after {
+    @media only screen and (max-width: calc(#{rem($media-desktop - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == desktop-before {
+    @media only screen and (min-width: calc(#{rem($media-desktop + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook {
+    @media only screen and (max-width: rem($media-notebook)) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook-after {
+    @media only screen and (max-width: calc(#{rem($media-notebook - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == notebook-before {
+    @media only screen and (min-width: calc(#{rem($media-notebook + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet {
+    @media only screen and (max-width: rem($media-tablet)) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet-after {
+    @media only screen and (max-width: calc(#{rem($media-tablet - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == tablet-before {
+    @media only screen and (min-width: calc(#{rem($media-tablet + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone {
+    @media only screen and (max-width: rem($media-smartphone)) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone-after {
+    @media only screen and (max-width: calc(#{rem($media-smartphone - 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == smartphone-before {
+    @media only screen and (min-width: calc(#{rem($media-smartphone + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == phone {
+    @media only screen and (max-width: rem($media-phone)) {
+      @content;
+    }
+  }
+
+  @else if $media == phone-before {
+    @media only screen and (min-width: calc(#{rem($media-phone + 1px)})) {
+      @content;
+    }
+  }
+
+  @else if $media == last {
+    @media only screen and (max-width: rem($media-last)) {
+      @content;
+    }
+  }
+
+  @else if $media == retina {
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      @content;
+    }
+  }
+
+  @else if $media == hover {
+    @media (hover: hover) {
+      @content;
+    }
+  }
+
+  @else if $media == touch or $media == coarse {
+    @media (pointer: coarse) {
+      @content;
+    }
+  }
+
+  @else if $media == animation {
+    @media (prefers-reduced-motion: no-preference) {
+      @content;
+    }
+  }
+}

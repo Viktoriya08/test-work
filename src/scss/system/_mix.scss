@@ -159,174 +159,42 @@
   clip: rect(0 0 0 0);
 }
 
-// MEDIA
-// Универсальный миксин для медиа-запросов
-@mixin media($media) {
-  @if $media == fullhd {
-    @media only screen and (max-width: rem($media-fullhd)) {
-      @content;
-    }
-  }
+// @mixin adaptiv-font($pcSize, $mobSize, $moreMaxWidth: true) {
+//   $addSize: $pcSize - $mobSize;
+//   $maxWidth: $page-max-width - $page-min-width;
+//   @if $moreMaxWidth {
+//     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$page-min-width + px}) / #{$maxWidth}));
+//   }
+//   @if $moreMaxWidth == false {
+//     font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$page-min-width + px}) / #{$maxWidth}));
+//     @media only screen and (min-width: calc(#{rem($maxWidth + 1px)})) {
+//       font-size: $pcSize+px;
+//     }
+//   }
+// }
 
-  @else if $media == fullhd-after {
-    @media only screen and (max-width: calc(#{rem($media-fullhd - 1px)})) {
-      @content;
-    }
-  }
+//адаптивное значение в диапазоне  минимальной и максимальной ширины макета
+/**
+* Пример использования в стилях:
+* @include fluid(margin-top,40, 24) - без остановки на максимальной ширине макета
+* @include fluid(margin-top,40, 24, false) - с остановкой роста на максимальной ширине макета
+*
+* @param {string} $property - css свойство, которое хотим добавить
+* @param {number} $pcSize - максимальное значение в пикселях
+* @param {number} $mobSize - минимальное значение в пикселях
+* @param {boolean} $moreMaxWidth - добавляет медиазапрос на максимальной ширине макета, и свойство($property) останавливается в росте.
+*/
 
-  @else if $media == fullhd-before {
-    @media only screen and (min-width: calc(#{rem($media-fullhd + 1px)})) {
-      @content;
-    }
+@mixin fluid($property, $pcSize, $mobSize, $moreMaxWidth: false) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $page-max-width - $page-min-width;
+  @if $moreMaxWidth == true {
+    #{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$page-min-width + px}) / #{$maxWidth}));
   }
-
-  @else if $media == quadhd {
-    @media only screen and (max-width: rem($media-quadhd)) {
-      @content;
-    }
-  }
-
-  @else if $media == quadhd-after {
-    @media only screen and (max-width: calc(#{rem($media-quadhd - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == quadhd-before {
-    @media only screen and (min-width: calc(#{rem($media-quadhd + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == hd {
-    @media only screen and (max-width: rem($media-hd)) {
-      @content;
-    }
-  }
-
-  @else if $media == hd-after {
-    @media only screen and (max-width: calc(#{rem($media-hd - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == hd-before {
-    @media only screen and (min-width: calc(#{rem($media-hd + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == desktop {
-    @media only screen and (max-width: rem($media-desktop)) {
-      @content;
-    }
-  }
-
-  @else if $media == desktop-after {
-    @media only screen and (max-width: calc(#{rem($media-desktop - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == desktop-before {
-    @media only screen and (min-width: calc(#{rem($media-desktop + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == notebook {
-    @media only screen and (max-width: rem($media-notebook)) {
-      @content;
-    }
-  }
-
-  @else if $media == notebook-after {
-    @media only screen and (max-width: calc(#{rem($media-notebook - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == notebook-before {
-    @media only screen and (min-width: calc(#{rem($media-notebook + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == tablet {
-    @media only screen and (max-width: rem($media-tablet)) {
-      @content;
-    }
-  }
-
-  @else if $media == tablet-after {
-    @media only screen and (max-width: calc(#{rem($media-tablet - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == tablet-before {
-    @media only screen and (min-width: calc(#{rem($media-tablet + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == smartphone {
-    @media only screen and (max-width: rem($media-smartphone)) {
-      @content;
-    }
-  }
-
-  @else if $media == smartphone-after {
-    @media only screen and (max-width: calc(#{rem($media-smartphone - 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == smartphone-before {
-    @media only screen and (min-width: calc(#{rem($media-smartphone + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == phone {
-    @media only screen and (max-width: rem($media-phone)) {
-      @content;
-    }
-  }
-
-  @else if $media == phone-before {
-    @media only screen and (min-width: calc(#{rem($media-phone + 1px)})) {
-      @content;
-    }
-  }
-
-  @else if $media == last {
-    @media only screen and (max-width: rem($media-last)) {
-      @content;
-    }
-  }
-
-  @else if $media == retina {
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      @content;
-    }
-  }
-
-  @else if $media == hover {
-    @media (hover: hover) {
-      @content;
-    }
-  }
-
-  @else if $media == touch or $media == coarse {
-    @media (pointer: coarse) {
-      @content;
-    }
-  }
-
-  @else if $media == animation {
-    @media (prefers-reduced-motion: no-preference) {
-      @content;
+  @if $moreMaxWidth == false {
+    #{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$page-min-width + px}) / #{$maxWidth}));
+    @media only screen and (min-width: calc(#{rem($maxWidth + 1px)})) {
+      #{$property}: $pcSize+px;
     }
   }
 }

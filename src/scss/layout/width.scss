@@ -1,7 +1,23 @@
-.width {
+// .width {
+//   width: min(calc(100% - (var(--main-padding)*2)));
+//   margin-inline: auto;
+//   padding-inline: rem(20);
+//   flex: 0 0 auto;
+// }
+
+.wrapper {
   width: 100%;
-  max-width: calc(#{$width} + (#{rem(20)} * 2));
-  margin-inline: auto;
-  padding-inline: rem(20);
-  flex: 0 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--main-padding);
+
+  @include media(fullhd-before) {
+    max-width: 100%;
+    width: min(calc(80% - (var(--main-padding)*2)));
+  }
+
+  // @media (min-width: $media-fullhd) {
+  //   max-width: 100%;
+  //   width: min(calc(80% - (var(--main-padding)*2)));
+  // }
 }

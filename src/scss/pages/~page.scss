@@ -4,8 +4,8 @@
   justify-content: flex-start;
   align-items: center;
   min-height: dvh(100);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-body);
+  color: var(--color-primary-500);
 
   .ios & {
     /* stylelint-disable-next-line value-no-vendor-prefix */

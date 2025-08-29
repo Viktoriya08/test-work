@@ -7,7 +7,7 @@
   align-items: center;
   text-decoration: none;
   vertical-align: middle;
-  line-height: $btn-line-height;
+  line-height: 1;
   text-align: center;
   border: 1px solid transparent;
   max-width: 100%;
@@ -43,8 +43,6 @@
   // sizes
   &--size-base {
     @include btn-base;
-    min-height: $field-base;
-    min-width: $field-base;
     padding-left: rem(32);
     padding-right: rem(32);
   }

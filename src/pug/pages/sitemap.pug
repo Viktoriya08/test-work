@@ -7,16 +7,8 @@ block variables
     hasHeader = false
     const pages = [
       {
-        name: 'UI-kit',
-        src: 'ui-kit'
-      },
-      {
         name: 'Главная',
         src: 'index'
-      },
-      {
-        name: 'Ошибка ',
-        src: '404'
       },
     ]
 
@@ -25,8 +17,10 @@ block main
     include ../styles/sitemap.css
 
   main.container
+    .logo
+      img(src="/img/logo.svg" alt="").logo__img
     .wrapper
-      h1 Список страниц
+      h1 Тестовое задание Гнездиловой Виктории
       ol
         each page in pages
           li

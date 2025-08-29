@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ru"><head><title>Cedro - Список страниц</title><meta name="description" content="Cedro gulp template"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><script data-skip-moving="true">var ASSETS_PATH = './'
+<!DOCTYPE html><html lang="ru"><head><title>test - Список страниц</title><meta name="description" content="test template"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="address=no"><link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" crossorigin="anonymous"><script data-skip-moving="true">var ASSETS_PATH = './'
 </script>  <script type="module" crossorigin src="./assets/main.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main.css">
 </head><body><noscript><div class="noscript">Для полноценной работы сайта, необходимо включить JavaScript!</div></noscript><script>(() => {
@@ -23,29 +23,48 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
   min-height: 100dvh;
+  padding: 50px 20px;
+  background: var(--color-primary-300);
 }
 
 .wrapper {
+  flex-grow: 1;
   align-self: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 80%;
   padding: 1.5rem;
   margin: auto;
   background: #fff;
-  box-shadow: 0 10px 5px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0px 0px 17px 7px rgb(17 44 62 / 16%);
   border-radius: 10px;
+}
+
+.logo {
+  margin-left: auto;
+  max-width: 250px;
+}
+
+.logo__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
 }
 
 h1 {
   display: block;
   cursor: default;
   font-weight: 700;
+  margin-bottom: 120px;
+  font-size: 36px;
 }
 
 li {
+  font-size: 24px;
   padding: 0.5rem 0;
 }
-</style><main class="container"><div class="wrapper"><h1>Список страниц</h1><ol><li><a href="ui-kit.html">UI-kit - ui-kit.html</a></li><li><a href="index.html">Главная - index.html</a></li><li><a href="404.html">Ошибка  - 404.html</a></li></ol></div></main></div></div></body></html>
+</style><main class="container"><div class="logo"><img class="logo__img" src="./img/logo.svg" alt=""></div><div class="wrapper"><h1>Тестовое задание Гнездиловой Виктории</h1><ol><li><a href="index.html">Главная - index.html</a></li></ol></div></main></div></div></body></html>

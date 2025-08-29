@@ -1,7 +1,30 @@
 .header {
   width: 100%;
   min-height: rem(100);
-  padding: rem(20) 0;
-  background-color: var(--color-black);
+  padding: rem(32) 0;
+  background-color: var(--color-primary-trans-90);
   color: var(--color-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(20);
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: rem(60);
+  }
+
+  &__menu-link {
+    font-size: rem(13);
+    line-height: 100%;
+    text-transform: uppercase;
+  }
 }

@@ -1,5 +1,6 @@
 html {
   overscroll-behavior: none;
+  font-size: calc(16 / 1920) * 100vw;
 
   text-rendering: optimizeLegibility;
   // оптимизация выравнивания шрифта относительно центра строки
@@ -9,7 +10,8 @@ html {
 
 body {
   scrollbar-gutter: stable;
-  font-family: 'Geometria', sans-serif;
+  font-family: var(--font-family-primary);
+  font-size: rem(16);
 }
 
 a {

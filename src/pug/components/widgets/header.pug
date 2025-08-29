@@ -1,17 +1,11 @@
 mixin header(props = {})
 
   header.header
-    .header__grid
-      nav.header__nav
-        ul.menu
-          li.menu__item
-            a(href="#").menu__link Кейсы
-          li.menu__item
-            a(href="#").menu__link компания
-          li.menu__item
-            a(href="#").menu__link Услуги
-          li.menu__item
-            a(href="#").menu__link Контакты
-
-      button.header__menu.btn
-        +icn({name: 'menu', width: '50'})
+    .wrapper
+      .header__grid
+        .logo logo
+        nav.header__nav
+          ul.header__menu
+            each item in dataMenu
+              li.header__menu-item
+                a(href=`${item.href}`).header__menu-link=item.title

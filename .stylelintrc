@@ -38,6 +38,7 @@
         "strip-unit",
         "from-percent-to-abs",
         "letter-spacing",
+        'fluid',
       ],
     }],
     "no-invalid-position-at-import-rule": [true, {
