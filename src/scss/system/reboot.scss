@@ -1,6 +1,28 @@
 html {
+  height: 100%;
   overscroll-behavior: none;
   font-size: calc(16 / 1920) * 100vw;
+
+  @media only screen and (max-width: 1440px) {
+    font-size: calc(16 / 1440) * 100vw
+  }
+
+  @media only screen and (max-width: 1024px) {
+    font-size: calc(16 / 1024) * 100vw
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: calc(16 / 768) * 100vw
+  }
+
+  @media only screen and (max-width: 375px) {
+    font-size: calc(16 / 375) * 100vw
+  }
+
+  @media only screen and (max-width: 320px) {
+    font-size: calc(16 / 320) * 100vw
+  }
+
 
   text-rendering: optimizeLegibility;
   // оптимизация выравнивания шрифта относительно центра строки
@@ -9,6 +31,7 @@ html {
 }
 
 body {
+  height: 100%;
   scrollbar-gutter: stable;
   font-family: var(--font-family-primary);
   font-size: rem(16);
@@ -19,12 +42,31 @@ a {
   color: var(--color-link);
 
   &:hover {
-    color: var(--color-link-hover);
+    color: var(--link-color-hover);
   }
 }
 
-textarea {
-  // form-sizing: auto;
+/* перебить стили автозаполнения */
+input:-internal-autofill-selected {
+  outline: 5px solid rgb(255, 255, 255);
+  background: #fff;
+}
+input {
+  &:-webkit-autofill {
+    --webkit-animation-name: autofill;
+    --webkit-animation-fill-mode: both;
+    --webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    &:hover,
+    &:focus,
+    &:active {
+      --webkit-box-shadow: 0 0 0 30px #fff inset !important;
+    }
+  }
+
+  &:-internal-autofill-selected {
+    color: inherit !important;
+    background-color: #fff !important;
+  }
 }
 
 .swiper-slide {

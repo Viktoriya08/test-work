@@ -15,9 +15,10 @@
     max-width: 100%;
     width: min(calc(80% - (var(--main-padding)*2)));
   }
+}
 
-  // @media (min-width: $media-fullhd) {
-  //   max-width: 100%;
-  //   width: min(calc(80% - (var(--main-padding)*2)));
-  // }
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }

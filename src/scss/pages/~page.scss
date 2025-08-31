@@ -1,8 +1,9 @@
 .page {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   min-height: dvh(100);
   background-color: var(--color-body);
   color: var(--color-primary-500);

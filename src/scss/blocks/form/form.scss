@@ -1,0 +1,51 @@
+.form {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: rem(30);
+    @include fluid(row-gap, 50, 20);
+
+    @include media(notebook) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include media(smartphone-after) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: rem(30);
+    grid-column: 1/-1;
+    margin-top: rem(20);
+    order: 10;
+
+    @include media(smartphone-after) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__btn {
+    grid-column: 2;
+
+    @include media(smartphone-after) {
+      grid-column: auto;
+    }
+  }
+
+  &__elem {
+
+    &--2 {
+      grid-column: span 2;
+      @include media(notebook) {
+        order: 2;
+      }
+
+      @include media(smartphone-after) {
+        grid-column: auto;
+      }
+    }
+  }
+}

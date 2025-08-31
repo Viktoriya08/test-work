@@ -1,0 +1,8 @@
+mixin modal-burger(props = {})
+
+  .modal-burger&attributes(attributes)
+    ul.modal-burger__menu
+      each item in dataMenu
+        li.modal-burger__menu-item
+          a(href=`mailto:${item.href}`).link.modal-burger__menu-link
+            span.link__text=item.title

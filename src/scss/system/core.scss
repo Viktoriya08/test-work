@@ -1,3 +1,100 @@
+:root {
+  // Настройки
+  /* Ширина полотна (макета) */
+  --max-width: 1220px; // 1172 + 24 +24
+  --scale-vw: calc(1220 / 100);
+
+  /* отступ у контейнера */
+  --main-padding: 24px;
+
+  @include media(smartphone) {
+    --main-padding: #{rem(16px)};
+  }
+
+  // Цвета
+  --color-white: #fff;
+  --color-black: #000;
+
+  // Основной цвет
+  --color-primary-300: #d8deff;
+  --color-primary-200: #286690;
+  --color-primary-400: #5f7eec;
+  --color-primary-500: #3E9CDC;
+  --color-primary-600: #272733;
+  --color-primary-700: #3D4050;
+  --color-primary-800: #6F6D7B;
+  --color-primary-900: #42A9ED;
+  --color-primary-trans-10: rgba(66, 46, 255, 0.1);
+  --color-primary-trans-90: rgba(16, 16, 29, 0.9);
+
+  // Второстепенный цвет
+  --color-neutral-100: #fff;
+  --color-neutral-200: #f3f3f3;
+  --color-neutral-300: #c5c5c5;
+  --color-neutral-400: #C3C3C3;
+  --color-neutral-500: #888;
+  --color-neutral-600: #BBBBBB;
+  --color-neutral-900: #111;
+  --color-neutral-trans-50: rgba(136, 136, 136, 0.3);
+  --color-neutral-trans-10: rgba(255, 255, 255, 0.85);
+
+  --color-body: var(--color-primary-600);
+
+  // Прозрачные цвета
+  --color-transparent-10: rgba(255, 255, 255, 0.1);
+  --color-transparent-20: rgba(255, 255, 255, 0.2);
+  --color-transparent-30: rgba(255, 255, 255, 0.3);
+  --color-transparent-50: rgba(255, 255, 255, 0.5);
+  --color-transparent-70: rgba(255, 255, 255, 0.7);
+  --color-transparent-80: rgba(255, 255, 255, 0.8);
+
+  // Вспомогательный цвет
+  --color-negative: #ec4646;
+  --color-positive: #60cf5d;
+  --color-warning: #ffd646;
+  --color-info: #3aa1ec;
+
+  // Тени
+  --shadow-xl: 0 50px 60px rgba(0, 0, 0, 0.08);
+  --shadow-l: 0 35px 40px rgba(0, 0, 0, 0.06);
+  --shadow-m: 0 15px 20px rgba(0, 0, 0, 0.04);
+  --shadow-s: 0 6px 8px rgba(0, 0, 0, 0.02);
+  --shadow-xs: 0 4px 4px rgba(0, 0, 0, 0.02);
+
+  // Радиусы
+  --radius-circle: 50%;
+  --radius-xxl: 40px;
+  --radius-xl: 24px;
+  --radius-l: 12px;
+  --radius-m: 8px;
+  --radius-s: 4px;
+
+  // Типографика
+  --font-family-primary: 'Lato', sans-serif;
+  // --font-family-secondary: 'Montserrat', sans-serif;
+  --font-weight: 400;
+
+  // Межстрочный интервал
+  --line-height: var(--line-height-xs);
+  --line-height-xl: 1.4;
+  --line-height-l: 1.3;
+  --line-height-m: 1.2;
+  --line-height-s: 1.1;
+  --line-height-xs: 1;
+
+  // Межбуквенный интервал
+  --letter-spacing-m: -0.04em;
+  --letter-spacing-s: -0.02em;
+
+  // Индексы
+  --z-index-base: 0;
+  --z-index-above: 1;
+  --z-index-below: -1;
+  --z-index-dropdown: 50;
+  --z-index-header: 60;
+  --z-index-modal: 70;
+}
+
 .noscript {
   background: #f00;
   color: #808080;

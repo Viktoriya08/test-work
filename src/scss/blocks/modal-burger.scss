@@ -1,0 +1,14 @@
+.modal-burger {
+
+  padding: calc(var(--header-height) + 20px) 20px 20px 20px;
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__menu-link {
+    text-transform: uppercase;
+  }
+}

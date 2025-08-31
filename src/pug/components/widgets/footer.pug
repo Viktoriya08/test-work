@@ -1,6 +1,29 @@
 mixin footer(props = {})
 
   footer.footer#footer(class=props.mod)
-    .width
+    .wrapper
 
-      .footer__core FOOTER
+      .footer__grid
+
+        .footer__text © 2018 «LoremIpsum.net» Все права защищены.
+
+        .footer__link.footer__decor
+          a(href="mailto:").link.link--color-neutral.footer__link-elem
+            +pic({name: 'p-2', format: 'png', path: 'content/payment'}).link__icon
+            span.link__text Qiwi wallet
+
+          a(href="mailto:").link.link--color-neutral.footer__link-elem
+            +pic({name: 'p-1', format: 'png', path: 'content/payment'}).link__icon
+            span.link__text Yandex Money
+
+          a(href="mailto:").link.link--color-neutral.footer__link-elem
+            +pic({name: 'p-3', format: 'png', path: 'content/payment'}).link__icon
+            span.link__text Web Money
+
+        .footer__contacts
+          a(href="mailto:").link.link--color-primary-icon
+            +icn({name: 'email', width: '20'}).link__icon
+            span.link__text info@ipsum228.com
+          a(href="#" target="_blank" rel="noopener noreferrer").link.link--color-primary-icon
+            +icn({name: 'vk', width: '20'}).link__icon
+            span.link__text Мы вконтакте

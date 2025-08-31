@@ -1,0 +1,31 @@
+.title {
+  --font-family: var(--font-family-primary);
+  --t-font-weight: 700;
+  --t-line-height: var(--line-height);
+  --t-text-transform: uppercase;
+
+  @include fluid(font-size, 40, 28);
+  font-family: var(--font-family);
+  font-weight: var(--t-font-weight);
+  line-height: var(--t-line-height);
+  text-transform: var(--t-text-transform);
+  text-wrap: balance;
+
+  span {
+    color: var(--color-primary-500);
+  }
+
+  &--h1 {
+    --t-font-weight: 700;
+    --t-line-height: var(--line-height-l);
+    --t-text-transform: uppercase;
+    @include fluid(font-size, 48, 22);
+  }
+
+  &--h2 {
+    --t-font-weight: 800;
+    --t-line-height: var(--line-height-s);
+    --t-text-transform: uppercase;
+    @include fluid(font-size, 36, 20);
+  }
+}

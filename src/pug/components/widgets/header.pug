@@ -1,11 +1,15 @@
 mixin header(props = {})
 
   header.header
-    .wrapper
+    .wrapper.header__wrapper
       .header__grid
-        .logo logo
+        .header__logo.logo
+          +pic({name: 'logo', format: 'svg', path: 'content'}).logo__img
         nav.header__nav
           ul.header__menu
             each item in dataMenu
               li.header__menu-item
-                a(href=`${item.href}`).header__menu-link=item.title
+                a(href=`mailto:${item.href}`).link.header__menu-link
+                  span.link__text=item.title
+        button(type="button" aria-label="меню" data-open-modal="#modal-burger").btn.btn--default.header__burger
+          +icn({name: 'menu', width: '20'}).header__burger-icon

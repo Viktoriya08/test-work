@@ -6,20 +6,20 @@
 // @import '../../node_modules/hystmodal/lib/hystmodal.css';
 
 // Global
-// @import 'system/fonts';
+@import 'system/fonts';
 @import 'system/animations';
 @import 'system/reset';
 @import 'system/reboot';
 @import 'system/core';
 @import 'system/typography';
 @import 'system/utils';
-@import 'system/breakpoints';
 
 // Core styles
 @import 'vendors/*.scss';
 @import 'ui/*.scss';
 @import 'elements/*.scss';
 @import 'blocks/*.scss';
+@import 'blocks/form/*.scss';
 @import 'sections/*.scss';
 @import 'widgets/*.scss';
 @import 'pages/*.scss';

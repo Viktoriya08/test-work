@@ -1,0 +1,73 @@
+.default-input {
+  position: relative;
+
+  &__box {
+    position: relative;
+    overflow: hidden;
+    color: var(--color-primary-600);
+  }
+
+  &__input {
+    @include fluid(font-size, 18, 16);
+    width: 100%;
+    padding: 0 rem(12);
+    background: var(--color-neutral-trans-10);
+    height: rem(48);
+    border-radius: 3px;
+    border: 1px solid var(--color-neutral-100);
+    color: var(--color-primary-600);
+    transition: background 0.3s, border-color 0.3s;
+
+    &:active,
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+
+    @include media(hover) {
+      &:hover {
+        outline: 0;
+        outline-offset: 0;
+        background: var(--color-neutral-100);
+        border-color: var(--color-primary-500);
+      }
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      top: rem(10);
+      font-size: rem(12);
+    }
+    &:focus,
+    &:focus-visible,
+    &:not(:placeholder-shown) {
+      border: 1px solid var(--color-primary-500);
+      background: var(--color-neutral-100);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: 0.3s;
+    top: 50%;
+    left: rem(12);
+    transform: translateY(-50%);
+    @include fluid(font-size, 18, 16);
+    font-weight: 400;
+  }
+
+  &__error {
+    position: absolute;
+    top: calc(100% + rem(4));
+    left: rem(12);
+    color: var(--color-negative);
+    text-transform: uppercase;
+    font-size: rem(12);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}

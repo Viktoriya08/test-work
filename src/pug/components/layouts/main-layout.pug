@@ -54,7 +54,7 @@ html(lang="ru")
     meta(name="format-detection" content="address=no")
 
     //- Preload resources
-    link(rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" crossorigin="anonymous")
+    link(rel="preload" href="fonts/lato/Lato-Bold.woff2" as="font" crossorigin="anonymous")
 
     link(rel="stylesheet" href="/src/scss/style.scss")
 
@@ -67,15 +67,14 @@ html(lang="ru")
 
     +sprite()
 
-    .page(class=pageMods)
-      .page__core
-        if hasHeader
-          +header({
-            mod: headerMods,
-            currentUrl: currentUrl
-          })
+    .layout(class=pageMods)
+      if hasHeader
+        +header({
+          mod: headerMods,
+          currentUrl: currentUrl
+        })
 
-        block main
+      block main
 
       if hasFooter
         +footer({

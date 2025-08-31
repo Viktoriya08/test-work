@@ -1,0 +1,62 @@
+mixin order-section(props = {})
+
+  section.order-section&attributes(attributes)
+    .wrapper.order-section__wrapper
+      if props.title
+        .order-section__head.fadeInRight
+          h2.order-section__title.title.title--h2!=props.title
+          p.order-section__text=props.text
+
+      if props.steps
+        .order-section__steps
+          each item in dataSteps
+            .step.order-section__steps-elem
+              .step__icon.fadeInUp
+                +pic({
+                    name: `${item.img}`,
+                    format: 'svg',
+                    path: 'content/steps'})
+              .step__text=item.text
+
+      form(action="#").order-section__form.form
+
+        .form__grid
+
+          .default-select
+            select.default-select__select(data-placeholder="Выберите тип системы" name="input-select")
+              option(data-placeholder="true")
+              option(value="1") тип системы 1
+              option(value="2") тип системы тип системы 2
+              option(value="3") тип системы 1
+              option(value="4") тип системы тип системы 2
+              option(value="5") Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, similique! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, similique!
+
+          .default-input
+            .default-input__box
+              input(type="text" name="input-email" placeholder=" ").default-input__input
+              label.default-input__label(for="input-email")
+                span.default-input__label-text Ваш e-mail
+            .default-input__error Ошибка
+
+          .default-input
+            .default-input__box
+              input(type="text" name="input-name" placeholder=" ").default-input__input
+              label.default-input__label(for="input-name")
+                span.default-input__label-text Ваше имя
+            .default-input__error Ошибка
+
+          .default-range.form__elem.form__elem--2
+            span.default-range__label Sed ut perspiciatis, unde omnis iste natus
+            span.default-range__current 5
+            .default-range__slider.slider-range(data-min="0" data-max="100" data-start="50" data-step="10")
+
+          .default-input
+            .default-file
+              span.default-file__placeholder
+              input.default-file__input(type="file" accept=".png,.jpg,.pdf" name="input-file")
+              label.default-file__label(fot="input-file")
+                span.default-file__label-text Прикрепить файл
+            .default-input__error Ошибка
+
+          .form__bottom
+            +btn({var: 'btn--color-primary'}).form__btn Отправить

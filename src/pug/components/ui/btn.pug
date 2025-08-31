@@ -4,7 +4,7 @@ mixin btn(props = {})
     const target = props.isExternal && '_blank'
     const type = (props.type || tag === 'button') ? props.type || 'button' : false
     const size = props.size && `btn--size-${props.size}`
-    const variant = props.var && `btn--var-${props.var}`
+    const variant = props.var && `${props.var}`
     const mod = props.mod && `btn--${props.mod}`
 
   #{tag}.btn(

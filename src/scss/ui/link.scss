@@ -1,0 +1,101 @@
+.link {
+  --link-gap: 10px;
+  // Typography
+  --link-font-family: var(--font-family-primary);
+  --link-line-height: var(--line-height-xs);
+  --link-font-weight: 400;
+  // Color
+  --link-color: var(--color-neutral-100);
+  --link-color-hover: var(--color-primary-500);
+  --link-color-focus: var(--color-neutral-200);
+  --link-color-active: var(--color-neutral-200);
+  --link-color-disabled: var(--color-neutral-500);
+  // -------------------------
+  --link-icon-size: 20px;
+
+  @include fluid(font-size, 13, 10);
+  font-family: var(--link-font-family);
+  font-weight: var(--link-font-weight);
+  line-height: var(--link-line-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--link-gap);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--link-color);
+  text-align: left;
+  height: fit-content;
+  text-decoration: none;
+  transition: color .3s ease, opacity .3s ease;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    opacity: .5;
+  }
+
+  @include media(hover) {
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &:active {
+    opacity: .5;
+  }
+
+  &:disabled,
+  &.disabled {
+    --link-color: var(--link-color-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: var(--link-icon-size);
+    height: var(--link-icon-size);
+    color: currentcolor;
+  }
+
+  &--color {
+
+    &:focus,
+    &:focus-visible {
+      --link-color: var(--link-color-focus);
+      opacity: 1;
+    }
+
+    &:active,
+    &.active {
+      --link-color: var(--link-color-active);
+      opacity: 1;
+    }
+
+    &-primary {
+      --link-color: var(--color-primary-500);
+    }
+
+    &-primary-icon {
+      .link__icon {
+        color: var(--color-primary-500);
+      }
+    }
+
+    &-neutral {
+      --link-color: var(--color-neutral-400);
+
+      @include media(hover) {
+        &:hover {
+          --link-color: var(--link-color-hover);
+        }
+      }
+    }
+  }
+
+}

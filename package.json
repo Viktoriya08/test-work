@@ -54,8 +54,11 @@
   "dependencies": {
     "hystmodal": "^1.*",
     "imask": "^7.*",
+    "inputmask": "^5.0.9",
     "js-cookie": "^3.*",
     "just-validate": "^4.*",
+    "nouislider": "^15.8.1",
+    "slim-select": "^2.12.1",
     "swiper": "^11.*"
   }
 }

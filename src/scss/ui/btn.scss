@@ -1,40 +1,137 @@
 .btn {
-  box-sizing: border-box;
-  position: relative;
-  bottom: 0;
+  --btn-px: 10px;
+  --btn-py: 15px;
+  --btn-gap: 8px;
+  // -----------------
+  --btn-font-family: var(--font-family-primary);
+  --btn-font-size: var(--font-size-text-l);
+  --btn-line-height: var(--line-height-xs);
+  --btn-letter-spacing: inherit;
+  --btn-font-weight: 400;
+  --btn-text-transform: uppercase;
+  // -----------------
+  --btn-color: inherit;
+  --btn-color-hover: inherit;
+  --btn-color-focus: inherit;
+  --btn-color-active: inherit;
+  --btn-color-disabled: inherit;
+  // -----------------
+  --btn-bg: transparent;
+  --btn-bg-hover: transparent;
+  --btn-bg-active: transparent;
+  --btn-bg-disabled: transparent;
+  // -----------------
+  --btn-border-size: 0;
+  --btn-border-color: transparent;
+  --btn-border-color-hover: transparent;
+  --btn-border-color-active: transparent;
+  --btn-border-color-disabled: transparent;
+  // -----------------
+  --btn-radius: var(--radius-s);
+  // -----------------
+  --btn-loader-color: inherit;
+  --btn-loader-ring-color: transparent;
+  --btn-icon-size: 16px;
+
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  vertical-align: middle;
+  justify-content: center;
+  gap: var(--btn-gap);
+
+  min-height: rem(43);
+  min-width: rem(183);
+  padding: var(--btn-py) var(--btn-px);
+
+  border: var(--btn-border-size) solid var(--btn-border-color);
+  border-radius: var(--btn-radius);
+
+  background-color: var(--btn-bg);
+
+  color: var(--btn-color);
+
+  font-family: var(--btn-font-family);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: var(--btn-letter-spacing);
   line-height: 1;
+
   text-align: center;
-  border: 1px solid transparent;
-  max-width: 100%;
-  opacity: 1;
-  transition: background var(--trans-base), color 0.2s var(--trans-base);
-  text-overflow: ellipsis;
-  user-select: none;
+  text-decoration: none;
+  text-transform: var(--btn-text-transform);
+
+  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+
+  cursor: pointer;
 
   // states
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    --btn-color: var(--btn-color-focus);
+  }
+
   &:hover:not(:disabled),
   &:hover:not(.is-disabled) {
-    text-decoration: none;
+    --btn-color: var(--btn-color-hover);
+    --btn-bg: var(--btn-bg-hover);
+    --btn-border-color: var(--btn-border-color-hover);
     cursor: pointer;
   }
 
   &:active,
   &.is-active {
     outline: none;
+    --btn-color: var(--btn-color-active);
+    --btn-bg: var(--btn-bg-active);
+    --btn-border-color: var(--btn-border-color-active);
   }
 
   &:disabled,
   &.is-disabled {
-    cursor: default;
+    --btn-color: var(--btn-color-disabled);
+    --btn-bg: var(--btn-bg-disabled);
+    --btn-border-color: var(--btn-border-color-disabled);
+
+    cursor: not-allowed;
     opacity: 0.7;
   }
 
   // vars
+
+  &--default {
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+
+  &--color {
+		&-primary {
+			--btn-color: var(--color-neutral-100);
+			--btn-color-hover: var(--color-neutral-100);
+			--btn-color-disabled: var(--color-neutral-100);
+			// -----------------
+			--btn-bg: var(--color-primary-500);
+			--btn-bg-hover: var(--color-primary-600);
+			--btn-bg-disabled: var(--color-neutral-400);
+      --btn-border-size: 1px;
+      --btn-border-color: var(--color-neutral-100);
+      --btn-border-color-hover: var(--color-neutral-100);
+    }
+
+			&-revert {
+				--btn-color: var(--color-black);
+				--btn-color-hover: var(--color-primary-500);
+				// -----------------
+				--btn-bg: var(--color-neutral-100);
+				--btn-bg-hover: var(--color-transparent-80);
+				--btn-bg-disabled: var(--color-transparent-30);
+        --btn-border-size: 1px;
+        --btn-border-color: var(--color-primary-800);
+        --btn-border-color-hover: var(--color-primary-500);
+      }
+  }
   &--var-main {
     background: var(--color-black);
     color: var(--color-white);

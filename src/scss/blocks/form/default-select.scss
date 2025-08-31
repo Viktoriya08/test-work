@@ -1,0 +1,144 @@
+@import "./slim-select";
+
+.default-select {
+  position: relative;
+  @include fluid(font-size, 18, 16);
+  width: 100%;
+  color: var(--color-primary-600);
+
+  select.default-select__select {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: rem(57);
+    color: inherit;
+    width: 100%;
+    padding: 0 rem(16);
+    transition: border-color .3s ease;
+    font-size: 16px;
+  }
+
+  &__label {
+    font-size: rem(14);
+    margin-bottom: rem(8);
+    color: #000;
+  }
+
+  &__select {
+    // Для стилизации плагина используем css переменные
+    --ss-border-color: var(--color-neutral-100);
+    --ss-main-height: #{rem(48)};
+    --ss-spacing-s: rem(0) rem(24);
+    --ss-font-color:  var(--color-primary-600);
+    --ss-border-radius: 4px;
+    --ss-primary-color: var(--color-neutral-200);
+    --ss-highlight-color: var(--color-neutral-trans-10);
+    --ss-bg-color: var(--color-neutral-trans-10);
+    --ss-font-placeholder-color: var(--color-primary-600);
+
+    &.ss-open-below {
+      --ss-bg-color: var(--color-neutral-100);
+      --ss-border-color: var(--color-primary-500);
+    }
+    @include media(hover) {
+      &:hover {
+        --ss-bg-color: var(--color-neutral-100);
+        --ss-border-color: var(--color-primary-500);
+      }
+    }
+  }
+
+  .ss-main {
+    position: relative;
+    &:focus {
+      box-shadow: none;
+    }
+
+    .ss-arrow {
+      width: rem(20);
+      height: rem(12);
+      flex: none;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      right: rem(10);
+      transform: translateY(-50%);
+      path {
+        stroke: var(--color-primary-600);
+      }
+    }
+
+    &.ss-open-below {
+      border-radius: var(--ss-border-radius);
+    }
+  }
+
+  .ss-values {
+    align-items: center;
+    padding-left: rem(10);
+    padding-right: rem(40);
+    width: 100%;
+
+    .ss-placeholder {
+      @include fluid(font-size, 18, 16);
+      margin-left: rem(10);
+    }
+
+    .ss-single {
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .ss-value {
+      background: none;
+      border-radius: 0;
+      overflow: hidden;
+      .ss-value-text {
+        padding: 0;
+        margin: 0;
+        font-size: inherit;
+        line-height: inherit;
+        color: var(--color-black);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .ss-value-delete {
+        display: none;
+      }
+    }
+
+    .ss-max,
+    .ss-single {
+      color:  var(--color-primary-600);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+.ss-content {
+
+  .ss-list {
+    background-color: var(--color-neutral-100);
+    padding-top: rem(10);
+
+    .ss-option {
+      @include line-clamp(2);
+      transition: color 0.3s;
+      padding: 0;
+      margin: rem(5) rem(7);
+
+      &.ss-selected:not(.ss-disabled) {
+        color: var(--color-primary-500);
+      }
+      @include media(hover) {
+        &:hover{
+          color: var(--color-primary-500);
+        }
+      }
+    }
+  }
+}

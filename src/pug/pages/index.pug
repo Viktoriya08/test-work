@@ -6,40 +6,17 @@ block variables
 
 block main
   main.page
-    section.info
-      .info__wrapper
-        h1.title Lorem ipsum dolor sit amet consectetur adipiscing
-        h1.title--2 IT CRON
+    +hero-section()
 
-        .info__gr.info__grid--grow.info__grid--decor-mini
-          +pic({name: 'logo', format: 'svg', path: 'content'}).info__logo
-          .info__content
-            p.info__text Проектно-продуктовый подход к&nbsp;оказанию IT-услуг
-
-          .info__decor.info__decor-mini
-            +icn({name: 'romb', width: '45'}).info__decor-elem-mini.info__decor-elem-mini--1
-            +icn({name: 'romb', width: '25'}).info__decor-elem-mini.info__decor-elem-mini--2
-            +icn({name: 'romb', width: '65'}).info__decor-elem-mini.info__decor-elem-mini--3
-
-        footer.info__footer.info__grid
-          ul.social.info__footer-social
-            li.social__item
-              a(href="#" target="_blank" rel="noopener noreferrer").social__link
-                +icn({name: 'f', width: '72'})
-            li.social__item
-              a(href="#" target="_blank" rel="noopener noreferrer").social__link
-                +icn({name: 'i', width: '72'})
-            li.social__item
-              a(href="#" target="_blank" rel="noopener noreferrer").social__link
-                +icn({name: 'lin', width: '72'})
-            li.social__item
-              a(href="#" target="_blank" rel="noopener noreferrer").social__link
-                +icn({name: 't', width: '72'})
-
-      .info__decor
-        +icn({name: 'ellipse'}).info__decor-elem.info__decor-elem--top
-        //- +icon('ellipse').info__decor-elem.info__decor-elem--bottom
+    +order-section({
+      title: 'Оформление <span> Заказа</span>',
+      text: 'Перед заполнением формы ознакомьтесь с нашей схемой работы!',
+      steps: true
+    })
 
 block modals
   +modal({id: 'modal-feedback'})
     +modal-feedback()
+
+  +modal({id: 'modal-burger', mod: 'burger'})
+    +modal-burger()
