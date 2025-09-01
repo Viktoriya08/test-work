@@ -1,3 +1,6 @@
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -523,6 +526,8 @@ const calcHeaderHeight = () => {
 };
 class initInputFile {
   constructor() {
+    __publicField(this, "inputsFiles");
+    __publicField(this, "fileTypes");
     this.inputsFiles = document.querySelectorAll(".default-file__input");
     if (!this.inputsFiles.length) return;
     this.init();
@@ -530,13 +535,14 @@ class initInputFile {
   }
   init() {
     this.inputsFiles.forEach((input) => input.addEventListener("change", (event) => {
+      var _a, _b;
       const [file] = event.target.files;
       if (file.size / 1024 / 1024 < 5) {
         let fileType = file.name.match(/\.([^.]+)$|$/)[0];
         let itsImage = this.fileTypes.includes(fileType);
         if (itsImage) {
-          const filePlaceholder = input.parentNode.querySelector(".default-file__placeholder");
-          input.parentNode.classList.add("active");
+          const filePlaceholder = (_a = input.parentNode) == null ? void 0 : _a.querySelector(".default-file__placeholder");
+          (_b = input.parentNode) == null ? void 0 : _b.classList.add("active");
           filePlaceholder.textContent = file.name;
         } else {
           input.value = null;
@@ -4449,6 +4455,7 @@ function initSlimSelect(parentSelector, selectSelector, clear) {
   destroySelects();
   const selectList = document.querySelectorAll(parentSelector);
   selectList.forEach((selectItem) => {
+    var _a;
     const select = selectItem.querySelector(selectSelector);
     if (!select) return;
     const placeholder = select.getAttribute("data-placeholder");
@@ -4473,7 +4480,7 @@ function initSlimSelect(parentSelector, selectSelector, clear) {
       }
     });
     if (!isException) {
-      window.selects.push(slimSelectInstance);
+      (_a = window.selects) == null ? void 0 : _a.push(slimSelectInstance);
     }
   });
 }

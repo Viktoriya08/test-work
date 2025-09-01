@@ -35,8 +35,8 @@
 
     &:focus ~ label,
     &:not(:placeholder-shown) ~ label {
-      top: rem(10);
-      font-size: rem(12);
+      top: 10px;
+      font-size: 12px;
     }
     &:focus,
     &:focus-visible,
@@ -53,7 +53,7 @@
     white-space: nowrap;
     transition: 0.3s;
     top: 50%;
-    left: rem(12);
+    left: 12px;
     transform: translateY(-50%);
     @include fluid(font-size, 18, 16);
     font-weight: 400;

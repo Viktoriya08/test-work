@@ -13,7 +13,7 @@
 
   @include media(fullhd-before) {
     max-width: 100%;
-    width: min(calc(80% - (var(--main-padding)*2)));
+    width: min(calc(80% - (var(--main-padding)*2) ) );
   }
 }
 
@@ -21,4 +21,5 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow: hidden;
 }

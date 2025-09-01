@@ -11,6 +11,13 @@ const configSelect = {
 	}
 }
 
+declare global {
+  interface Window {
+    selects?: SlimSelect[];
+    destroySelects?: () => void;
+  }
+}
+
 // Передаем основной элемент селекта и селектор самого select внутри него
 /**
  * Добавляет элемент в слушатель события scroll страницы
@@ -65,7 +72,7 @@ export function initSlimSelect(parentSelector, selectSelector, clear) {
 
 		//Сброс селектов
 		if (!isException) {
-			window.selects.push(slimSelectInstance)
+			window.selects?.push(slimSelectInstance)
 			if (clear) {
 				try {
 					slimSelectInstance.setSelected(`${slimSelectInstance.select[0]}`)

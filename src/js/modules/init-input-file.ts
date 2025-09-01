@@ -1,4 +1,6 @@
 export default class initInputFile {
+  private inputsFiles
+  private fileTypes
   constructor() {
       this.inputsFiles = document.querySelectorAll('.default-file__input')
       if(!this.inputsFiles.length) return
@@ -13,8 +15,8 @@ export default class initInputFile {
               let fileType = file.name.match(/\.([^.]+)$|$/)[0]
               let itsImage = this.fileTypes.includes(fileType)
               if(itsImage) {
-                  const filePlaceholder = input.parentNode.querySelector('.default-file__placeholder')
-                  input.parentNode.classList.add('active')
+                  const filePlaceholder = input.parentNode?.querySelector('.default-file__placeholder')
+                  input.parentNode?.classList.add('active')
                   filePlaceholder.textContent = file.name
               } else {
                   input.value = null

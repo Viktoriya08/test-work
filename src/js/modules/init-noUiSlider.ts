@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider'
 
 export default function initNoUiSlider() {
 
-    const rangeSliders = document.querySelectorAll(`.slider-range`)
+    const rangeSliders = document.querySelectorAll<HTMLElement>(`.slider-range`)
 
     rangeSliders.forEach((rangeSlider) => {
       const sliderStart = rangeSlider.getAttribute("data-start")

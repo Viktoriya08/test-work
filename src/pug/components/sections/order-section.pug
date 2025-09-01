@@ -15,6 +15,7 @@ mixin order-section(props = {})
                 +pic({
                     name: `${item.img}`,
                     format: 'svg',
+                    lazy: 'lazy',
                     path: 'content/steps'})
               .step__text=item.text
 

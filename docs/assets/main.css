@@ -1278,12 +1278,12 @@ ul:not([class]) li::before {
   }
 }
 .default-input__input:not(:-moz-placeholder-shown) ~ label {
-  top: 0.625rem;
-  font-size: 0.75rem;
+  top: 10px;
+  font-size: 12px;
 }
 .default-input__input:focus ~ label, .default-input__input:not(:placeholder-shown) ~ label {
-  top: 0.625rem;
-  font-size: 0.75rem;
+  top: 10px;
+  font-size: 12px;
 }
 .default-input__input:not(:-moz-placeholder-shown) {
   border: 1px solid var(--color-primary-500);
@@ -1300,7 +1300,7 @@ ul:not([class]) li::before {
   white-space: nowrap;
   transition: 0.3s;
   top: 50%;
-  left: 0.75rem;
+  left: 12px;
   transform: translateY(-50%);
   font-size: calc(16px + 2 * (100vw - 320px) / 1600);
   font-weight: 400;
@@ -1833,8 +1833,8 @@ ul:not([class]) li::before {
 }
 .default-select .ss-values {
   align-items: center;
-  padding-left: 0.625rem;
-  padding-right: 2.5rem;
+  padding-left: 10px;
+  padding-right: 40px;
   width: 100%;
 }
 .default-select .ss-values .ss-placeholder {
@@ -2090,6 +2090,7 @@ ul:not([class]) li::before {
   position: absolute;
   inset: 0;
   z-index: -1;
+  background-color: var(--color-primary-300);
 }
 .hero-section__btns {
   display: flex;
@@ -2396,4 +2397,5 @@ ul:not([class]) li::before {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  overflow: hidden;
 }

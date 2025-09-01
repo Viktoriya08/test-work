@@ -1,5 +1,5 @@
 export const calcHeaderHeight = () => {
-	const doc = document.documentElement;
+	const doc: HTMLElement = document.documentElement;
 	const header = document.querySelector('.header') as HTMLElement;
 
 	if (header)
