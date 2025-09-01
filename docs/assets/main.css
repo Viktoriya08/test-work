@@ -1816,8 +1816,8 @@ ul:not([class]) li::before {
   box-shadow: none;
 }
 .default-select .ss-main .ss-arrow {
-  width: 1.25rem;
-  height: 0.75rem;
+  width: 20px;
+  height: 12px;
   flex: none;
   margin: 0;
   position: absolute;
@@ -1976,14 +1976,20 @@ ul:not([class]) li::before {
   position: absolute;
   top: -10px;
   right: -17px;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--color-primary-900);
   border: 1px solid var(--color-primary-200);
   box-shadow: none;
   cursor: grab;
   transition: transform 0.3s ease;
+}
+@media only screen and (max-width: 38.75rem) {
+  .noUi-target.noUi-horizontal .noUi-handle {
+    width: 20px;
+    height: 20px;
+  }
 }
 @media (hover: hover) {
   .noUi-target.noUi-horizontal .noUi-handle:hover {
@@ -2004,7 +2010,7 @@ ul:not([class]) li::before {
 }
 .default-range {
   position: relative;
-  height: 3rem;
+  height: 48px;
   width: 100%;
   color: var(--color-neutral-100);
   display: flex;
