@@ -377,25 +377,33 @@ a:hover {
   color: var(--link-color-hover);
 }
 /* перебить стили автозаполнения */
-input:-internal-autofill-selected {
-  outline: 5px solid rgb(255, 255, 255);
-  background: #fff;
-}
-input:-webkit-autofill {
-  --webkit-animation-name: autofill;
-  --webkit-animation-fill-mode: both;
-  --webkit-box-shadow: 0 0 0 30px #fff inset !important;
-}
-input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-  --webkit-box-shadow: 0 0 0 30px #fff inset !important;
-}
-input:-internal-autofill-selected {
-  color: inherit !important;
-  background-color: #fff !important;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  -webkit-text-fill-color: #ссс;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
 }
 .swiper-slide,
 .swiper-slide * {
   box-sizing: border-box;
+}
+*::-moz-selection {
+  background: rgba(62, 157, 220, 0.5764705882); /* Safari */
+}
+*::selection {
+  background: rgba(62, 157, 220, 0.5764705882); /* Safari */
+}
+*::-moz-selection {
+  background: rgba(62, 157, 220, 0.5764705882); /* Firefox */
 }
 :root {
   /* Ширина полотна (макета) */
@@ -465,7 +473,7 @@ input:-internal-autofill-selected {
 }
 @media only screen and (max-width: 38.75rem) {
   :root {
-    --main-padding: 1rem;
+    --main-padding: 16px;
   }
 }
 .noscript {
@@ -658,11 +666,11 @@ input:-internal-autofill-selected {
   animation: display-none 0.3s ease;
 }
 .btn {
-  --btn-px: 10px;
+  --btn-px: 35px;
   --btn-py: 15px;
   --btn-gap: 8px;
   --btn-font-family: var(--font-family-primary);
-  --btn-font-size: var(--font-size-text-l);
+  --btn-font-size: 13px;
   --btn-line-height: var(--line-height-xs);
   --btn-letter-spacing: inherit;
   --btn-font-weight: 400;
@@ -733,6 +741,8 @@ input:-internal-autofill-selected {
   opacity: 0.7;
 }
 .btn--default {
+  --btn-px: 0;
+  --btn-py: 0;
   min-width: -moz-fit-content;
   min-width: fit-content;
   min-height: -moz-fit-content;
@@ -759,23 +769,11 @@ input:-internal-autofill-selected {
   --btn-border-color: var(--color-primary-800);
   --btn-border-color-hover: var(--color-primary-500);
 }
-.btn--var-main {
-  background: var(--color-black);
-  color: var(--color-white);
-}
 .btn--size-base {
   font-size: 16px;
   line-height: 1.5;
   padding-left: 2rem;
   padding-right: 2rem;
-}
-.btn--fluid {
-  width: 100%;
-  display: flex;
-}
-.btn--square {
-  padding-left: 0;
-  padding-right: 0;
 }
 .field {
   width: 100%;
@@ -845,13 +843,14 @@ textarea.input, .textarea {
   --link-font-family: var(--font-family-primary);
   --link-line-height: var(--line-height-xs);
   --link-font-weight: 400;
+  --link-font-size: 13px;
   --link-color: var(--color-neutral-100);
   --link-color-hover: var(--color-primary-500);
   --link-color-focus: var(--color-neutral-200);
   --link-color-active: var(--color-neutral-200);
   --link-color-disabled: var(--color-neutral-500);
   --link-icon-size: 20px;
-  font-size: calc(10px + 3 * (100vw - 320px) / 1600);
+  font-size: var(--link-font-size);
   font-family: var(--link-font-family);
   font-weight: var(--link-font-weight);
   line-height: var(--link-line-height);
@@ -868,11 +867,6 @@ textarea.input, .textarea {
   height: fit-content;
   text-decoration: none;
   transition: color 0.3s ease, opacity 0.3s ease;
-}
-@media only screen and (min-width: calc(100.0625rem)) {
-  .link {
-    font-size: 13px;
-  }
 }
 .link:focus, .link:focus-visible {
   outline: none;
@@ -1149,13 +1143,18 @@ ul:not([class]) li::before {
   width: 100%;
   padding: 0 0.75rem;
   background: var(--color-neutral-trans-10);
-  height: 3rem;
+  height: 48px;
   border-radius: 3px;
-  font-size: 1rem;
+  font-size: calc(14px + 2 * (100vw - 320px) / 1600);
   border: 1px solid var(--color-neutral-100);
   color: var(--color-primary-600);
   overflow: hidden;
   transition: background 0.3s, border-color 0.3s;
+}
+@media only screen and (min-width: calc(100.0625rem)) {
+  .default-file {
+    font-size: 16px;
+  }
 }
 @media (hover: hover) {
   .default-file:hover {
@@ -1215,9 +1214,14 @@ ul:not([class]) li::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.9375rem;
+  font-size: calc(14px + 1 * (100vw - 320px) / 1600);
   font-weight: 600;
   text-transform: uppercase;
+}
+@media only screen and (min-width: calc(100.0625rem)) {
+  .default-file__label {
+    font-size: 15px;
+  }
 }
 .default-file__label::before {
   content: "";
@@ -1226,8 +1230,8 @@ ul:not([class]) li::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
-  width: 1.0625rem;
-  height: 1.25rem;
+  width: 17px;
+  height: 20px;
   transition: background-image 0.3s;
 }
 .default-file__placeholder {
@@ -1248,9 +1252,9 @@ ul:not([class]) li::before {
 .default-input__input {
   font-size: calc(16px + 2 * (100vw - 320px) / 1600);
   width: 100%;
-  padding: 0 0.75rem;
+  padding: 0 12px;
   background: var(--color-neutral-trans-10);
-  height: 3rem;
+  height: 48px;
   border-radius: 3px;
   border: 1px solid var(--color-neutral-100);
   color: var(--color-primary-600);
@@ -1300,6 +1304,7 @@ ul:not([class]) li::before {
   transform: translateY(-50%);
   font-size: calc(16px + 2 * (100vw - 320px) / 1600);
   font-weight: 400;
+  pointer-events: none;
 }
 @media only screen and (min-width: calc(100.0625rem)) {
   .default-input__label {
@@ -1766,7 +1771,7 @@ ul:not([class]) li::before {
 .default-select select.default-select__select {
   border: 1px solid transparent;
   border-radius: 4px;
-  height: 3.5625rem;
+  height: 57px;
   color: inherit;
   width: 100%;
   padding: 0 1rem;
@@ -1774,13 +1779,18 @@ ul:not([class]) li::before {
   font-size: 16px;
 }
 .default-select__label {
-  font-size: 0.875rem;
+  font-size: calc(12px + 2 * (100vw - 320px) / 1600);
   margin-bottom: 0.5rem;
   color: #000;
 }
+@media only screen and (min-width: calc(100.0625rem)) {
+  .default-select__label {
+    font-size: 14px;
+  }
+}
 .default-select__select {
   --ss-border-color: var(--color-neutral-100);
-  --ss-main-height: 3rem;
+  --ss-main-height: 48px;
   --ss-spacing-s: rem(0) rem(24);
   --ss-font-color: var(--color-primary-600);
   --ss-border-radius: 4px;
@@ -1829,7 +1839,6 @@ ul:not([class]) li::before {
 }
 .default-select .ss-values .ss-placeholder {
   font-size: calc(16px + 2 * (100vw - 320px) / 1600);
-  margin-left: 0.625rem;
 }
 @media only screen and (min-width: calc(100.0625rem)) {
   .default-select .ss-values .ss-placeholder {
@@ -1872,6 +1881,7 @@ ul:not([class]) li::before {
   padding-top: 0.625rem;
 }
 .ss-content .ss-list .ss-option {
+  font-size: calc(14px + 2 * (100vw - 320px) / 1600);
   /* autoprefixer: off */
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -1882,7 +1892,12 @@ ul:not([class]) li::before {
   word-wrap: break-word;
   transition: color 0.3s;
   padding: 0;
-  margin: 0.3125rem 0.4375rem;
+  margin: 8px;
+}
+@media only screen and (min-width: calc(100.0625rem)) {
+  .ss-content .ss-list .ss-option {
+    font-size: 16px;
+  }
 }
 .ss-content .ss-list .ss-option.ss-selected:not(.ss-disabled) {
   color: var(--color-primary-500);
@@ -2081,7 +2096,7 @@ ul:not([class]) li::before {
   padding-top: calc(40px + 80 * (100vw - 320px) / 1600);
   padding-bottom: calc(60px + 90 * (100vw - 320px) / 1600);
   color: var(--color-white);
-  background-image: url("../../img/content/bg.png");
+  background-image: url("../img/content/bg.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -2149,7 +2164,7 @@ ul:not([class]) li::before {
   left: 100%;
   top: 25%;
   transform: translateX(-50%);
-  background-image: url("../../img/content/steps/dots.svg");
+  background-image: url("../img/content/steps/dots.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -2234,15 +2249,10 @@ ul:not([class]) li::before {
   }
 }
 .footer__text {
-  font-size: calc(10px + 3 * (100vw - 320px) / 1600);
+  font-size: 13px;
   line-height: 1;
   font-weight: 400;
   padding-right: 2.125rem;
-}
-@media only screen and (min-width: calc(100.0625rem)) {
-  .footer__text {
-    font-size: 13px;
-  }
 }
 @media only screen and (max-width: 64rem) {
   .footer__text {
@@ -2282,7 +2292,7 @@ ul:not([class]) li::before {
 .header {
   width: 100%;
   min-height: calc(60px + 40 * (100vw - 320px) / 1600);
-  padding: 2rem 0;
+  padding: 32px 0;
   background-color: var(--color-primary-trans-90);
   color: var(--color-white);
   position: fixed;
@@ -2300,7 +2310,7 @@ ul:not([class]) li::before {
 }
 @media only screen and (max-width: 38.75rem) {
   .header {
-    padding: 0.625rem 0;
+    padding: 16px 0;
   }
 }
 .header__wrapper {
@@ -2313,9 +2323,12 @@ ul:not([class]) li::before {
   gap: 1.25rem;
   width: 100%;
 }
-@media only screen and (max-width: 38.75rem) {
+.header__logo {
+  max-width: calc(190px + 60 * (100vw - 320px) / 1600);
+}
+@media only screen and (min-width: calc(100.0625rem)) {
   .header__logo {
-    max-width: 9.375rem;
+    max-width: 250px;
   }
 }
 .header__menu {

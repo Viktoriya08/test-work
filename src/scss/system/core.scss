@@ -8,7 +8,7 @@
   --main-padding: 24px;
 
   @include media(smartphone) {
-    --main-padding: #{rem(16px)};
+    --main-padding: 16px;
   }
 
   // Цвета

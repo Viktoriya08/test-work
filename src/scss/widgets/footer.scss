@@ -54,7 +54,7 @@
   }
 
   &__text {
-    @include fluid(font-size, 13, 10);
+    font-size: 13px;
     line-height: 1;
     font-weight: 400;
     padding-right: rem(34);

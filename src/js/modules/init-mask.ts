@@ -54,7 +54,7 @@ export const initMask = () => {
       },
       lazy: false
     })
-
+    console.log(mainMask)
     return mainMask
   })
 

@@ -9,7 +9,7 @@
   select.default-select__select {
     border: 1px solid transparent;
     border-radius: 4px;
-    height: rem(57);
+    height: 57px;
     color: inherit;
     width: 100%;
     padding: 0 rem(16);
@@ -18,7 +18,7 @@
   }
 
   &__label {
-    font-size: rem(14);
+    @include fluid(font-size, 14, 12);
     margin-bottom: rem(8);
     color: #000;
   }
@@ -26,7 +26,7 @@
   &__select {
     // Для стилизации плагина используем css переменные
     --ss-border-color: var(--color-neutral-100);
-    --ss-main-height: #{rem(48)};
+    --ss-main-height: 48px;
     --ss-spacing-s: rem(0) rem(24);
     --ss-font-color:  var(--color-primary-600);
     --ss-border-radius: 4px;
@@ -80,7 +80,6 @@
 
     .ss-placeholder {
       @include fluid(font-size, 18, 16);
-      margin-left: rem(10);
     }
 
     .ss-single {
@@ -126,10 +125,11 @@
     padding-top: rem(10);
 
     .ss-option {
+      @include fluid(font-size, 16, 14);
       @include line-clamp(2);
       transition: color 0.3s;
       padding: 0;
-      margin: rem(5) rem(7);
+      margin: 8px;
 
       &.ss-selected:not(.ss-disabled) {
         color: var(--color-primary-500);

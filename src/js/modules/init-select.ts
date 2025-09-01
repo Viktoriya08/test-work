@@ -55,7 +55,6 @@ export function initSlimSelect(parentSelector, selectSelector, clear) {
 				placeholderText: placeholder || configSelect.messages.placeholder,
 				closeOnSelect: !multiple,
 				allowDeselect: multiple,
-				maxValuesShown: true,
 				maxValuesMessage: "Выбрано: {number}",
 				maxSelected: 5,
 				openPosition: "down",

@@ -33,15 +33,15 @@ mixin order-section(props = {})
 
           .default-input
             .default-input__box
-              input(type="text" name="input-email" placeholder=" ").default-input__input
+              input(type="text" name="input-email" placeholder=" " autocomplete="on").default-input__input
               label.default-input__label(for="input-email")
                 span.default-input__label-text Ваш e-mail
             .default-input__error Ошибка
 
           .default-input
             .default-input__box
-              input(type="text" name="input-name" placeholder=" ").default-input__input
-              label.default-input__label(for="input-name")
+              input(type="text" name="username" placeholder=" " autocomplete="on").default-input__input
+              label.default-input__label(for="username")
                 span.default-input__label-text Ваше имя
             .default-input__error Ошибка
 

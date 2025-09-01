@@ -10,9 +10,9 @@
   &__input {
     @include fluid(font-size, 18, 16);
     width: 100%;
-    padding: 0 rem(12);
+    padding: 0 12px;
     background: var(--color-neutral-trans-10);
-    height: rem(48);
+    height: 48px;
     border-radius: 3px;
     border: 1px solid var(--color-neutral-100);
     color: var(--color-primary-600);
@@ -57,6 +57,7 @@
     transform: translateY(-50%);
     @include fluid(font-size, 18, 16);
     font-weight: 400;
+    pointer-events: none;
   }
 
   &__error {

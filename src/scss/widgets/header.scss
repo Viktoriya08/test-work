@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   @include fluid(min-height, 100, 60);
-  padding: rem(32) 0;
+  padding: 32px 0;
   background-color: var(--color-primary-trans-90);
   color: var(--color-white);
   position: fixed;
@@ -13,7 +13,7 @@
   justify-content: center;
 
   @include media(smartphone) {
-    padding: rem(10) 0;
+    padding: 16px 0;
   }
 
   &__wrapper{
@@ -29,9 +29,7 @@
   }
 
   &__logo {
-    @include media(smartphone) {
-      max-width: rem(150);
-    }
+    @include fluid(max-width, 250, 190);
   }
 
   &__menu {

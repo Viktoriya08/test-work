@@ -1,10 +1,10 @@
 .btn {
-  --btn-px: 10px;
+  --btn-px: 35px;
   --btn-py: 15px;
   --btn-gap: 8px;
   // -----------------
   --btn-font-family: var(--font-family-primary);
-  --btn-font-size: var(--font-size-text-l);
+  --btn-font-size: 13px;
   --btn-line-height: var(--line-height-xs);
   --btn-letter-spacing: inherit;
   --btn-font-weight: 400;
@@ -102,6 +102,8 @@
   // vars
 
   &--default {
+    --btn-px: 0;
+    --btn-py: 0;
     min-width: fit-content;
     min-height: fit-content;
   }
@@ -132,26 +134,11 @@
         --btn-border-color-hover: var(--color-primary-500);
       }
   }
-  &--var-main {
-    background: var(--color-black);
-    color: var(--color-white);
-  }
 
   // sizes
   &--size-base {
     @include btn-base;
     padding-left: rem(32);
     padding-right: rem(32);
-  }
-
-  // mods
-  &--fluid {
-    width: 100%;
-    display: flex;
-  }
-
-  &--square {
-    padding-left: 0;
-    padding-right: 0;
   }
 }

@@ -2,7 +2,7 @@
   @include fluid(padding-top, 120, 40);
   @include fluid(padding-bottom, 150, 60);
   color: var(--color-white);
-  background-image: url('../../img/content/bg.png');
+  background-image: url('../img/content/bg.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -48,7 +48,7 @@
           left: 100%;
           top: 25%;
           transform: translateX(-50%);
-          background-image: url('../../img/content/steps/dots.svg');
+          background-image: url('../img/content/steps/dots.svg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: 100% 100%;

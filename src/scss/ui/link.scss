@@ -4,6 +4,7 @@
   --link-font-family: var(--font-family-primary);
   --link-line-height: var(--line-height-xs);
   --link-font-weight: 400;
+  --link-font-size: 13px;
   // Color
   --link-color: var(--color-neutral-100);
   --link-color-hover: var(--color-primary-500);
@@ -13,7 +14,7 @@
   // -------------------------
   --link-icon-size: 20px;
 
-  @include fluid(font-size, 13, 10);
+  font-size: var(--link-font-size);
   font-family: var(--link-font-family);
   font-weight: var(--link-font-weight);
   line-height: var(--link-line-height);
