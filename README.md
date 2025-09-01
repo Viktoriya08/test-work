@@ -2,7 +2,7 @@
 
 # Тестовое задание Гнездилова Виктория
 
-**Верстка** - <a href="[http://example.com](https://viktoriya08.github.io/test-work)" target="_blank">[Link](https://viktoriya08.github.io/test-work)</a>
+**Верстка** - <a href="[http://example.com](https://viktoriya08.github.io/test-work)" target="_blank">[(https://viktoriya08.github.io/test-work)]</a>
 
 **Макет** - [https://www.figma.com/fileF2qhd2q7PcL9zfIA7y500A/Testing?type=design&node-id=0-1&mode=design&t=ouEUZU3qDLkkc1Ya-0](https://www.figma.com/fileF2qhd2q7PcL9zfIA7y500A/Testing?type=design&node-id=0-1&mode=design&t=ouEUZU3qDLkkc1Ya-0)
 
